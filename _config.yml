@@ -65,51 +65,15 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-
 github_username: beteje # your GitHub user name
-gitlab_username: # your GitLab user name
-x_username: # your X handle
+#twitter_username: # your Twitter handle
 linkedin_username: bethjelfs # your LinkedIn user name
 scholar_userid: D-pA_scAAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-6844-7154 # your ORCID ID
-medium_username: # your Medium username
-quora_username: # your Quora username
-publons_id: # your ID on Publons
 research_gate_profile: Beth_Jelfs # your profile on ResearchGate
-blogger_url: # your blogger URL
-work_url: # work page URL
-keybase_username: # your keybase user name
-wikidata_id: # your wikidata id
-wikipedia_id: # your wikipedia id (Case sensitive)
-dblp_url: # your DBLP profile url
-stackoverflow_id: # your stackoverflow id
-kaggle_id: # your kaggle id
-lastfm_id: # your lastfm id
-spotify_id: # your spotify id
-pinterest_id: # your pinterest id
-unsplash_id: # your unsplash id
-instagram_id: # your instagram id
-facebook_id: # your facebook id
-youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
-discord_id: # your discord id (18-digit unique numerical identifier)
-zotero_username: # your zotero username
-wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
 contact_note: >
   The best way to get in touch is via email
-
-# -----------------------------------------------------------------------------
-# Analytics and search engine verification
-# -----------------------------------------------------------------------------
-
-# For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
-# and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-google_analytics:  # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
-cronitor_analytics:  # cronitor RUM analytics site ID (format: XXXXXXXXX)
-
-# For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
-google_site_verification:  # your google-site-verification ID (Google Search Console)
-bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -123,7 +87,6 @@ permalink: /news/:year/:title/
 # Pagination
 pagination:
   enabled: true
-
 
 # -----------------------------------------------------------------------------
 # Collections
