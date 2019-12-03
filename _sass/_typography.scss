@@ -28,8 +28,13 @@ sup {
     top: -0.9ex;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h5, h6 {
+  font-weight: 100;
+}
+
+h3, h4  {
     font-weight: 100;
+    color: $theme-color;
 }
 
 div.equation {

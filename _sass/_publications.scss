@@ -3,10 +3,10 @@
         color: $theme-color;
         // border-bottom: 1px solid $theme-color;
         // border-top: 1px solid $theme-color;
-        font-size: 32px;
-        margin-bottom: 30px;
+        font-size: 24px;
+        margin-bottom: 20px;
         // padding: 20px 0;
-        text-align: center;
+        text-align: left;
     }
 }
 .year {
@@ -36,11 +36,23 @@
                 }
             }
             > em {
-                border-bottom: 1px solid;
+                font-weight: bold;
                 font-style: normal;
             }
         }
-        a.abstract, a.bibtex { cursor: pointer; }
+        a.btn {
+          background-color: $theme-color;
+          color: $dark-gray;
+          border-radius: 8px;
+          padding: 6px;
+        }
+        a.abstract, a.bibtex {
+          cursor: pointer;
+          background-color: $theme-color;
+          color: $dark-gray;
+          border-radius: 8px;
+          padding: 6px;
+        }
         .hidden {
             font-size: $small-font-size;
             max-height: 0px;
@@ -74,12 +86,9 @@
             border: dashed 1px $background-color;
         }
         span.abstract.hidden.open {
-            border-color: $grey-color;
+            border-color: $theme-color;
+            margin-top: 5px;
         }
-    }
-    abbr {
-        position: absolute;
-            left: -7em;
     }
  }
 .star {
