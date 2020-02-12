@@ -1,8 +1,8 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
-description: still a work in progress
+description: Details of some of my past and present research projects (still in the process of updating)
 nav: true
 nav_order: 3
 display_categories: [work, fun]
@@ -56,8 +56,7 @@ horizontal: false
   {%- endif -%}
 {%- endif -%}
 </div>
-
+<!---
 {% endif %}
-
-{% endfor %}
 --->
+{% endfor %}
