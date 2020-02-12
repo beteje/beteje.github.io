@@ -1,13 +1,14 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
-description: still a work in progress
+description: Details of some of my past and present research projects (still in the process of updating)
+social: true
 ---
 
-<!---
-{% for project in site.projects %}
 
+{% for project in site.projects %}
+<!---
 {% if project.redirect %}
 <div class="project">
     <div class="thumbnail">
@@ -26,7 +27,7 @@ description: still a work in progress
     </div>
 </div>
 {% else %}
-
+--->
 <div class="project ">
     <div class="thumbnail">
         <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}">
@@ -37,14 +38,11 @@ description: still a work in progress
         {% endif %}    
         <span>
             <h1>{{ project.title }}</h1>
-            <br/>
-            <p>{{ project.description }}</p>
         </span>
         </a>
     </div>
 </div>
-
+<!---
 {% endif %}
-
-{% endfor %}
 --->
+{% endfor %}
