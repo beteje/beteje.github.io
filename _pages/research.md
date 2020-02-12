@@ -1,13 +1,12 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
-description: still a work in progress
+description: Details of some of my past and present research projects (still in the process of updating)
 nav: true
+social: true
 ---
 
-<!---
-{% for project in site.projects %}
 
   {% assign sorted_projects = site.projects | sort: "importance" %}
   {% for project in sorted_projects %}
@@ -46,8 +45,7 @@ nav: true
 {% endfor %}
 
 </div>
-
+<!---
 {% endif %}
-
-{% endfor %}
 --->
+{% endfor %}
