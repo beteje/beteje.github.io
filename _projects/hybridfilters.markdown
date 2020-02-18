@@ -133,15 +133,15 @@ Alternating high (turbulent) sea state and low (calm) sea state we can see that 
 ---
 
 ### Code
-Hybrid filter code can be found here: [hybrid-filters](https://github.com/beteje/hybrid-filters)   
+Hybrid filter code can be found here: [hybrid-filters](https://github.com/beteje/hybrid-filters){:target="_blank"}      
 This code contains several example filters and benchmark signals and can be customised to include any adaptive filter of your choosing.
 
 ---
 
 ### References
 
-[^1]: P. Vayanos, M. Chen, B. Jelfs, and D. P. Mandic, Exploiting Nonlinearity in Adaptive Signal Processing, Advances in Nonlinear Speech Processing, 2007 pp. 57–77 [\[doi\]](http://doi.org/10.1007/978-3-540-77347-4_3) [\[pdf\]]({{ site.baseurl }}/assets/pdf/2007_NOLISP.pdf)
-[^2]: B. Jelfs, S. Javidi, P. Vayanos, and D. Mandic, Characterisation of Signal Modality: Exploiting Signal Nonlinearity in Machine Learning and Signal Processing, Journal of Signal Processing Systems, 2010 vol. 61 no. 1 pp. 105–115 [\[doi\]](http://doi.org/10.1007/s11265-009-0358-z) [\[pdf\]]({{ site.baseurl }}/assets/pdf/2010_JSPS_MLSP.pdf)
-[^3]: B. Jelfs, P. Vayanos, S. Javidi, V. S. L. Goh, and D. Mandic, Collaborative Adaptive Filters for Online Knowledge Extraction and Information Fusion, Signal Processing Techniques for Knowledge Extraction and Information Fusion, D. Mandic et al. (eds), Springer, 2008 pp. 3–21 [\[doi\]](http://doi.org/10.1007/978-0-387-74367-7_1) [\[pdf\]]({{ site.baseurl }}/assets/pdf/2008_Knowledge_Extraction_Ch1.pdf)
-[^4]: L. Li, Y. Xia, B. Jelfs, J. Cao, and D. P. Mandic, Modelling of Brain Consciousness Based on Collaborative Adaptive Filters, Neurocomputing, 2012 vol. 76 no. 1 pp. 36–43 [\[doi\]](http://doi.org/10.1016/j.neucom.2011.05.038) [\[pdf\]]({{ site.baseurl }}/assets/pdf/2012_Neurocomputing.pdf)
-[^5]: B. Jelfs, D. P. Mandic, and S. C. Douglas, An Adaptive Approach for the Identification of Improper Complex Signals, Signal Processing, 2012 vol. 92 no. 2 pp. 335–344 [\[doi\]](http://doi.org/10.1016/j.sigpro.2011.07.020) [\[pdf\]]({{ site.baseurl }}/assets/pdf/2012_SigProc.pdf)
+[^1]: P. Vayanos, M. Chen, B. Jelfs, and D. P. Mandic, Exploiting Nonlinearity in Adaptive Signal Processing, Advances in Nonlinear Speech Processing, 2007 pp. 57–77 [\[doi\]](http://doi.org/10.1007/978-3-540-77347-4_3){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2007_NOLISP.pdf){:target="_blank"}
+[^2]: B. Jelfs, S. Javidi, P. Vayanos, and D. Mandic, Characterisation of Signal Modality: Exploiting Signal Nonlinearity in Machine Learning and Signal Processing, Journal of Signal Processing Systems, 2010 vol. 61 no. 1 pp. 105–115 [\[doi\]](http://doi.org/10.1007/s11265-009-0358-z){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2010_JSPS_MLSP.pdf){:target="_blank"}
+[^3]: B. Jelfs, P. Vayanos, S. Javidi, V. S. L. Goh, and D. Mandic, Collaborative Adaptive Filters for Online Knowledge Extraction and Information Fusion, Signal Processing Techniques for Knowledge Extraction and Information Fusion, D. Mandic et al. (eds), Springer, 2008 pp. 3–21 [\[doi\]](http://doi.org/10.1007/978-0-387-74367-7_1){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2008_Knowledge_Extraction_Ch1.pdf){:target="_blank"}
+[^4]: L. Li, Y. Xia, B. Jelfs, J. Cao, and D. P. Mandic, Modelling of Brain Consciousness Based on Collaborative Adaptive Filters, Neurocomputing, 2012 vol. 76 no. 1 pp. 36–43 [\[doi\]](http://doi.org/10.1016/j.neucom.2011.05.038){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2012_Neurocomputing.pdf){:target="_blank"}
+[^5]: B. Jelfs, D. P. Mandic, and S. C. Douglas, An Adaptive Approach for the Identification of Improper Complex Signals, Signal Processing, 2012 vol. 92 no. 2 pp. 335–344 [\[doi\]](http://doi.org/10.1016/j.sigpro.2011.07.020){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2012_SigProc.pdf){:target="_blank"}
