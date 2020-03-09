@@ -139,7 +139,6 @@ This code contains several example filters and benchmark signals and can be cust
 ---
 
 ### References
-
 [^1]: P. Vayanos, M. Chen, B. Jelfs, and D. P. Mandic, Exploiting Nonlinearity in Adaptive Signal Processing, Advances in Nonlinear Speech Processing, 2007 pp. 57–77 [\[doi\]](http://doi.org/10.1007/978-3-540-77347-4_3){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2007_NOLISP.pdf){:target="_blank"}
 [^2]: B. Jelfs, S. Javidi, P. Vayanos, and D. Mandic, Characterisation of Signal Modality: Exploiting Signal Nonlinearity in Machine Learning and Signal Processing, Journal of Signal Processing Systems, 2010 vol. 61 no. 1 pp. 105–115 [\[doi\]](http://doi.org/10.1007/s11265-009-0358-z){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2010_JSPS_MLSP.pdf){:target="_blank"}
 [^3]: B. Jelfs, P. Vayanos, S. Javidi, V. S. L. Goh, and D. Mandic, Collaborative Adaptive Filters for Online Knowledge Extraction and Information Fusion, Signal Processing Techniques for Knowledge Extraction and Information Fusion, D. Mandic et al. (eds), Springer, 2008 pp. 3–21 [\[doi\]](http://doi.org/10.1007/978-0-387-74367-7_1){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2008_Knowledge_Extraction_Ch1.pdf){:target="_blank"}
