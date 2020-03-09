@@ -24,7 +24,7 @@ figcaption {
     /*padding: $img-spacing;*/
 }
 .one {
-    width:33.33%;
+    width: 33.33%;
 }
 .two {
     width: 66.66%;
@@ -32,6 +32,10 @@ figcaption {
 .three {
     width: 100%;
 }
+.half {
+    width: 50%;
+}
+
 .caption {
     height: 100%;
     color: $caption-color;
