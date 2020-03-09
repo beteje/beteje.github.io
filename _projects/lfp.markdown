@@ -72,7 +72,7 @@ To ensure the significance of the results a bootstrap procedure is used, shiftin
 ---
 
 ### Code
-The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis)
+The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank"}   
 The phase locking and spike field coherence code is based on the methods described by Rutishauser et al.[^4].
 
 ---
