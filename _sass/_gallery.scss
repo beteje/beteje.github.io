@@ -6,7 +6,21 @@ figcaption {
     font-size: $small-font-size;
 }
 
+.interactive-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
 
+.interactive-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .blankbox {
     background: $theme-color;
 }
