@@ -41,7 +41,7 @@ The multiscale CLAP has been shown to successfully track time-varying delays bet
 ---
 
 ### Code
-Hybrid filter code can be found here: [LAP_DelayEstimation](https://github.com/beteje/LAP_DelayEstimation){:target="_blank"}      
+Delay estimation code can be found here: [LAP_DelayEstimation](https://github.com/beteje/LAP_DelayEstimation){:target="_blank"}      
 This code contains the several implementations of the LAP framework and a signal generation function which has a number of different delay functions.
 
 ---
