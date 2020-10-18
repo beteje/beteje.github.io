@@ -65,8 +65,8 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
+
 github_username: beteje # your GitHub user name
-#twitter_username: # your Twitter handle
 linkedin_username: bethjelfs # your LinkedIn user name
 scholar_userid: D-pA_scAAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-6844-7154 # your ORCID ID
