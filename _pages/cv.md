@@ -2,7 +2,7 @@
 layout: page
 permalink: /cv/
 title: CV
-description: A little bit more about myself, my full cv can be found <a href="../assets/pdf/cv.pdf" target="_blank">here</a>
+description: A little bit more about myself, my full cv can be found <a href="../assets/pdf/cv.pdf" target="_blank" style="color:#2698BA;">here</a>
 nav: true
 social: true
 ---
