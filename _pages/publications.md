@@ -19,7 +19,7 @@ nav_order: 2
     <div id="collapse_pre" class="collapse" aria-labelledby="header_pre">
       <div class="card-body">
         <h2>Preprints</h2>
-        <div class="card-body">{% bibliography -f papers -q @electronic %}</div>
+        {% bibliography -f papers -q @electronic %}
       </div>
     </div>
   </div>

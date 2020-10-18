@@ -125,6 +125,18 @@ pagination:
   enabled: true
 
 # -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog_name: News  # your blog must have a name for it to show up in the nav bar
+blog_description: Latest updates
+permalink: /news/:year/:title/
+
+# Pagination
+pagination:
+  enabled: true
+
+# -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
 
