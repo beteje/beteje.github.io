@@ -3,6 +3,7 @@ layout: page
 title: LFP Analysis
 description: A toolbox for analysis of local field potentials
 img: /assets/img/PhaseLocked.jpg
+importance: 2
 ---
 
 This toolbox performs several different analyses on the local field potentials (LFP) generated from multichannel recording electrodes. After performing spike sorting the LFP of a channel can be acquired by low-pass filtering the recorded data. This then allows the relationship between the LFP and neural spiking to be investigated.
@@ -13,11 +14,11 @@ This toolbox performs several different analyses on the local field potentials (
 Phase locking describes the relationship between the timing of neural spiking and the phase of the LFP, at a given frequency. If a neuron is phase locked it means it has a preferred phase angle at which it is more likely to fire. If the neuron is not phase locked it fires more uniformly across all of the phase angles.  
 
 By using a continuous wavelet transform we can determine the phase of the LFP at a given frequency as a function of time allowing us to identify the phase of the LFP at each spike time of a specified neuron. From which we can build a distribution of the phase angles for the neurons.
-<div class="img_row">
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/PhaseLocked.jpg" alt="" title="Example of a phase locked neuron"/>
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/PhaseUnLocked.jpg" alt="" title="Example of a phase unlocked neuron"/>
+<div class="row align-items-center justify-content-center">
+  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/PhaseLocked.jpg' | relative_url }}" alt="" title="Example of a phase locked neuron"/></div>
+  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/PhaseUnLocked.jpg' | relative_url }}" alt="" title="Example of a phase unlocked neuron"/></div>
 </div>
-<div class = "col two caption">
+<div class = "caption text-right">
   Left: Example distribution for a phase locked neuron, red arrow represents the preferred angle. Right: Example distribution for a non phase locked neuron with no preferred angle.
 </div>
 
@@ -26,10 +27,11 @@ By calculating the circular mean of the distribution of the phase angles and tes
 There is also an option in the toolbox to calculate the phase locking with a time offset between the neuron spike action potential and the LFP to allow analysis of whether the LFP leads or lags the action potential.
 
 The effects of either increased[^1] or disrupted[^2] phase locking our results have shown have an impact on learning and memory.
-<div class="img_row">
-    <img class="col three left" src="{{ site.baseurl }}/assets/img/PhaseLocking.jpg" alt="" title="Significance of phase locking"/>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/PhaseLocking.jpg' | relative_url }}" alt="" title="Significance of phase locking"/></div>
 </div>
-<div class="col three caption">
+<div class="caption text-right">
     Examples of significance of phase locking across frequency for two different neurons.
 </div>
 
@@ -43,11 +45,11 @@ To compute the SFC for each spike a segment of the LFP data centered on the spik
 Finally the spike field coherence is the fSTA over the STP(f) expressed as a percentage.
 
 Similarly to the phase locking our results have shown changes in SFC specifically in the theta frequency band have impacts on learning and memory[^1] [^3].
-<div class="img_row">
-    <img class="col two left" src="{{ site.baseurl }}/assets/img/SFC_VNS.jpg" alt="" title="Example of spike field coherence"/>
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/SFC_bands.jpg" alt="" title="Example of SFC in frequency bands"/>
+<div class="row align-items-center">
+  <div class="col-sm-7 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/SFC_VNS.jpg' | relative_url }}" alt="" title="Example of spike field coherence"/></div>
+  <div class="col-sm-5 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/SFC_bands.jpg' | relative_url }}" alt="" title="Example of SFC in frequency bands"/></div>
 </div>
-<div class = "col three caption">
+<div class = "caption text-right">
   Left: Examples of spike field coherence pre and post vagal nerve stimulation. Right: Example of changes in the spike field coherence in different frequency bands pre and post vagal nerve stimulation.
 </div>
 
@@ -60,12 +62,12 @@ To calculate the amplitude cross-correlation both sets of LFP data are filtered 
 
 To ensure the significance of the results a bootstrap procedure is used, shifting the data by a random amount and repeating to allow a confidence interval to be determined. If the result from the original cross-correlation is greater than the 95% confidence interval from the bootstrapped values then the result is considered significant.
 
-<div class="img_row">
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/AmplitudeXCorrTheta.png" alt="" title="Example of amplitude cross-correlation"/>
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/AmplitudeXCorrGamma.png" alt="" title="Example of amplitude cross-correlation"/>
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/AmplitudeXCorrHist.png" alt="" title="Histograms of amplitude cross-correlation"/>
+<div class="row align-items-center">
+  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrTheta.png' | relative_url }}" alt="" title="Example of amplitude cross-correlation"/></div>
+  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrGamma.png' | relative_url }}" alt="" title="Example of amplitude cross-correlation"/></div>
+  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrHist.png' | relative_url }}" alt="" title="Histograms of amplitude cross-correlation"/></div>
 </div>
-<div class = "col three caption">
+<div class = "caption text-right">
   Left: Example of amplitude cross-correlation in the theta frequency band (peak marked with red star). Middle: Example of amplitude cross-correlation in the gamma frequency band. Right: Histograms of peak lag times for several rats (theta band top, gamma band bottom).
 </div>
 

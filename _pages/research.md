@@ -55,7 +55,3 @@ horizontal: false
   {%- endif -%}
 {%- endif -%}
 </div>
-<!---
-{% endif %}
---->
-{% endfor %}

@@ -4,7 +4,6 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Beth
-middle_name:
 last_name: Jelfs
 email: beth.jelfs@rmit.edu.au
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -95,6 +94,18 @@ pagination:
 disqus_shortname: # put your disqus shortname
 
 # -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog_name: News  # your blog must have a name for it to show up in the nav bar
+blog_description: Latest updates
+permalink: /news/:year/:title/
+
+# Pagination
+pagination:
+  enabled: true
+
+# -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
 
@@ -106,7 +117,7 @@ collections:
     permalink: /news/:path/
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /research/:path/
 
 news_limit: 5
 
