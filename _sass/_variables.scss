@@ -3,6 +3,13 @@
  * To adjust anything, simply edit the variables below and rebuild the theme.
  ******************************************************************************/
 
+<<<<<<< HEAD
+=======
+// Dimensions
+
+$max-content-width: 1000px;
+
+>>>>>>> be67415 (Updated to al-folio v0.3.3)
 // Colors
 $red-color:           #FF3636 !default;
 $red-color-dark:      #B71C1C !default;
@@ -22,13 +29,12 @@ $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;
 
-$grey-color:          #808080 !default;
-$grey-color-light:    lighten($grey-color, 20%);
-$grey-color-dark:     darken($grey-color, 20%);
-$grey-900:            #212529;
+$mid-grey-color:      #666 !default;
+$light-grey-color:    #ccc !default;
 
-$white-color: #ffffff !default;
-$black-color: #000000 !default;
+$grey-color:          #828282 !default;
+$grey-color-light:    lighten($grey-color, 40%);
+$grey-color-dark:     darken($grey-color, 25%);
 
 // Theme colors
 
