@@ -2,13 +2,13 @@
 layout: page
 permalink: /cv/
 title: CV
-description: A little bit more about myself, my full cv can be found here - <a href="../assets/pdf/cv.pdf" target="_blank">cv.pdf</a>
-
+description: A little bit more about myself, my full cv can be found <a href="../assets/pdf/cv.pdf" target="_blank" style="color:#2698BA;">here</a>
+nav: true
 social: true
 ---
 
 ### Summary:
-I am currently a recipient of a Vice Chancellor's Research Fellowship at RMIT University where I work in the School of Engineering. Before this I worked as a Research Fellow at City University of Hong Kong. Where I worked in the [Laboratory for Computational Neuroscience](http://www.ee.cityu.edu.hk/~rosachan/home.html) with my research focusing on hierarchical models of finger coordination.
+I am currently a recipient of a Vice Chancellor's Research Fellowship at RMIT University where I work in the School of Engineering. Before this I worked as a Research Fellow at City University of Hong Kong. Where I worked in the [Laboratory for Computational Neuroscience](https://cityucompuneurolab.github.io/) with my research focusing on hierarchical models of finger coordination.
 
 I have also had the opportunity to apply my research in a number of different areas. Prior to moving to Hong Kong I was a member of the [Near Infrared Spectroscopy Group](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/nirs) at the Biomedical Optics Research Lab in the Department of Medical Physics & Bioengineering at University College London, where I worked on a Wellcome Trust funded project entitled "Integrating monitoring & modelling for real time tracking of cerebral circulation and metabolism." While at UCL I was involved with several different outreach events and also acted as an event manager for the inaugral [Pint of Science](https://pintofscience.com/) festival.
 
@@ -30,3 +30,5 @@ My PhD research was in statistical analysis of signal processing methods for mac
 ### Education:
 * 09/2005-03/2010: __PhD - Collaborative Adaptive Filtering for Machine Learning__, _Department of Electrical & Electronic Engineering, Imperial College London, London, UK_
 * 09/2001-06/2005: __MEng Electronic & Software Engineering__, _Department of Engineering, University of Leicester, Leicester, UK_
+
+---
