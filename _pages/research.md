@@ -7,6 +7,7 @@ nav: true
 social: true
 ---
 
+<div class="projects grid">
 
   {% assign sorted_projects = site.projects | sort: "importance" %}
   {% for project in sorted_projects %}
@@ -45,7 +46,3 @@ social: true
 {% endfor %}
 
 </div>
-<!---
-{% endif %}
---->
-{% endfor %}
