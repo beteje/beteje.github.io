@@ -81,6 +81,11 @@ To deal with the complexity of the neuromuscular system and extend beyond the va
 
 ---
 
+### Code
+Fuzzy entropy NMF code can be found here: [Entropy_NMF](https://github.com/beteje/Entropy_NMF){:target="_blank"}
+
+---
+
 ### References
 [^1]: B. Jelfs, S. Zhou, B. K. Y. Wong, C. Tin, and R. H. M. Chan, Recruitment of Small Synergistic Movement Makes a Good Pianist, in Proc. Annual International Conference of the IEEE Engineering in Medicine and Biology Society, 2015 pp. 242–245 [\[doi\]](http://doi.org/10.1109/embc.2015.7318345){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2015_EMBC.pdf){:target="_blank"}
 [^2]: B. Jelfs, L. Li, C. Tin, and R. H. M. Chan, Fuzzy Entropy Based Nonnegative Matrix Factorization for Muscle Synergy Extraction, in Proc. IEEE International Conference on Acoustics, Speech and Signal Processing, 2016 pp. 739–743 [\[doi\]](http://doi.org/10.1109/icassp.2016.7471773){:target="_blank"}[\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_ICASSP.pdf){:target="_blank"}
