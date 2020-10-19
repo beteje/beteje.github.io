@@ -11,6 +11,13 @@ layout: default
 
   <article>
     {{ content }}
+
+    {% if page.social %}
+      <div class="social">
+        {% include social.html %}
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
   </article>
 
   {%- if page.related_publications != null and page.related_publications.size > 0 -%}
