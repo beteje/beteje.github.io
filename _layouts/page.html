@@ -10,6 +10,13 @@ layout: default
 
   <article>
     {{ content }}
+
+    {% if page.social %}
+      <div class="social">
+        {% include social.html %}
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
   </article>
 
 </div>

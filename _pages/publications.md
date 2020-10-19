@@ -9,8 +9,8 @@ nav: true
 <div class="publications">
 
 {% for y in page.years %}
-  {% if y==page.years[0] %}
-    <h2 class="year_first">{{y}}<h2>
+  {% if y==2020 %}
+    <h2 class="year_first">{{y}}</h2>
   {% else %}
     <h2 class="year">{{y}}</h2>
   {% endif %}
