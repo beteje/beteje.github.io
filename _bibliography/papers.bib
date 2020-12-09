@@ -1,3 +1,4 @@
+% Encoding: UTF-8
 @Article{Viswanathan2020,
   author    = {R. Viswanathan and S. P. Arjunan and A. Bingham and B. Jelfs and P. Kempster and S. Raghav and D. K. Kumar},
   title     = {Complexity Measures of Voice Recordings as a Discriminative Tool for Parkinson's Disease},
@@ -88,11 +89,10 @@ This review has found that more research for the analysis and evaluation of the 
   supp     = {2016_SciRep_SM.pdf},
 }
 
-@Article{She2016,
+@Electronic{She2016,
   author   = {Q. She and B. Jelfs and A. S. Charles and R. H. M. Chan},
-  journal  = {arXiv preprint arXiv:1605.02869},
   title    = {Network Modeling of Short Over-Dispersed Spike-Counts: A Hierarchical Parametric Empirical Bayes Framework},
-  year     = {Under review},
+  howpublished = {arXiv:1605.02869},
   abstract = {Accurate statistical models of neural spike responses can characterize the information carried by neural populations. Yet, challenges in recording at the level of individual neurons commonly results in relatively limited samples of spike counts, which can lead to model overfitting. Moreover, current models assume spike counts to be Poisson-distributed, which ignores the fact that many neurons demonstrate over-dispersed spiking behavior. The Negative Binomial Generalized Linear Model (NB-GLM) provides a powerful tool for modeling over-dispersed spike counts. However, maximum likelihood based standard NB-GLM leads to unstable and inaccurate parameter estimations. Thus, we propose a hierarchical parametric empirical Bayes method for estimating the parameters of the NB-GLM. Our method integrates Generalized Linear Models (GLMs) and empirical Bayes theory to: (1) effectively capture over-dispersion nature of spike counts from retinal ganglion neural responses; (2) significantly reduce mean square error of parameter estimations when compared to maximum likelihood based method for NB-GLMs; (3) provide an efficient alternative to fully Bayesian inference with low computational cost for hierarchical models; and (4) give insightful findings on both neural interactions and spiking behaviors of real retina cells. We apply our approach to study both simulated data and experimental neural data from the retina. The simulation results indicate the new framework can efficiently and accurately retrieve the weights of functional connections among neural populations and predict mean spike counts. The results from the retinal datasets demonstrate the proposed method outperforms both standard Poisson and Negative Binomial GLMs in terms of the predictive log-likelihood of held-out data.},
   arxiv    = {1605.02869},
   pdf      = {2016_SODS.pdf},
@@ -317,6 +317,7 @@ We provide the first direct evidence that the cisplatin interrupts theta-frequen
   booktitle = {Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference},
   title     = {Fast \& Efficient Delay Estimation Using Local All-Pass \& Kalman Filters},
   year      = {2019},
+  pages     = {1533--1539},
   abstract  = {Delay estimation is a common problem in signal processing which becomes particularly challenging when the delay is time-varying and the recorded signals are non-stationary. While methods for time-varying delay (TVD) estimation exist many of these are based on maximum likelihood estimation and thus are not well suited to real-time implementation. In this paper we present a method for TVD estimation which is suitable for real-time non-stationary applications. The proposed method combines local all-pass (LAP) filters with a Kalman filter. By using measurement fusion to combine the outputs of several LAP filters in the Kalman filter we can accurately track TVDs whilst allowing for fast and efficient parallel computation. Illustrative simulations demonstrate the effectiveness of the proposed approach.},
   code      = {https://github.com/beteje/LAP_DelayEstimation},
   doi       = {10.1109/APSIPAASC47483.2019.9023238},
@@ -547,3 +548,15 @@ We provide the first direct evidence that the cisplatin interrupts theta-frequen
 variability has remained at a relatively constant low level, which is expected, as only `normal' labours have been studied so far. Our results are very encouraging and show that there is potential for the use of this method of intrapartum monitoring and the technique could also be applied at antepartum, but this is a pilot study and many more results are needed before firm conclusions and recommendations can be made.},
   pdf       = {2004_MEDSIP.pdf},
 }
+
+@InProceedings{Jelfs2020,
+  author    = {B. Jelfs and C. Gilliam},
+  booktitle = {Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference},
+  title     = {Application of Image Processing and Circular Statistics to 3D Cellular Alignment},
+  year      = {2020},
+  abstract  = {Alignment and orientation of cells play an important part in the function of biological tissue. Recent developments in bioengineering using 3D scaffolds have created an increased need for computational techniques to measure orientation which extend beyond 2D measures to produce 3D measures of orientation. Initial studies of 3D alignment have focused on determining individual orientations, however, to truly understand the impact these structures have on the cellular alignment we need to understand the overall distribution of the orientations and their statistics. Hence, in this paper we develop an approach for determining 3D cellular alignment based on image gradients and directional statistics. The intensity gradients of the volumetric image are used to construct a 3D vector field and the local dominant orientations of this vector field then determined.},
+  code      = {https://github.com/beteje/Orientation},
+  pdf       = {2020_APSIPA.pdf},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

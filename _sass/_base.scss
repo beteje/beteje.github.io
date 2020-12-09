@@ -126,7 +126,7 @@ h3, h4 {
   .contact-icon {
     font-size: 2rem;
     a {
-      color: $grey-color-dark;
+      color: $text-color;
       &:hover {
         color: $theme-color;
       }
@@ -139,7 +139,7 @@ h3, h4 {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: $grey-color-dark;
+    background-color: $mid-grey-color;
     border-radius: 1px;
     margin-bottom: 4px;
     transition: all 0.2s;
@@ -184,7 +184,7 @@ h3, h4 {
   .contact-icon {
     font-size: 4rem;
     a {
-      color: $grey-color-dark;
+      color: $text-color;
       &:hover {
         color: $theme-color;
       }
@@ -204,8 +204,8 @@ h3, h4 {
 // Footer
 
 footer.fixed-bottom {
-  color: lighten($grey-color, 25%);
-  background-color: $grey-color-dark;
+  color: $light-grey-color;
+  background-color: $mid-grey-color;
   font-size: 0.75rem;
   .container {
     padding-top: 9px;
@@ -214,7 +214,7 @@ footer.fixed-bottom {
   a {
     color: white;
     &:hover {
-      color: lighten($theme-color, 25%);
+      color: $theme-color;
       text-decoration: none;
     }
   }
@@ -240,7 +240,7 @@ footer.sticky-bottom {
     padding-top: 2rem;
     padding-bottom: 2rem;
     .post-meta {
-      color: $grey-color;
+      color: $light-grey-color;
       font-size: 0.875rem;
       margin-bottom: 0;
     }
@@ -278,26 +278,40 @@ footer.sticky-bottom {
   .card img {
     width: 100%;
   }
+  .table th {
+    background-color: $theme-color;
+  }
 }
 
+table.project-table {
+  th {
+    color: $theme-color;
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 1px solid $theme-color;
+    border-bottom: 1px solid $theme-color;
+    text-align: center;
+  }
+  tr{
+    background-color: lighten($theme-color, 50%);
+  }
+  tr.darker {
+    background-color: lighten($theme-color, 40%);
+
+  }
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+}
 
 // Publications
 
 .publications {
   margin-top: 2rem;
-  h1 {
-    color: $theme-color;
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  h2 {
-    margin-bottom: 1rem;
-    span {
-      font-size: 1.5rem;
-    }
-  }
   h2.year {
     color: $light-grey-color;
     border-top: 1px solid $light-grey-color;
@@ -305,13 +319,23 @@ footer.sticky-bottom {
     margin-top: 2rem;
     margin-bottom: -2rem;
     text-align: right;
+    &:hover {
+      color: $theme-color;
+    }
   }
-  h2.year_first {
+  .btn-expand {
+    background-color: $theme-color;
     color: $light-grey-color;
-    padding-top: 1rem;
-    margin-top: 2rem;
-    margin-bottom: -2rem;
-    text-align: right;
+    border-radius: 10px;
+    &:hover {
+      color: $mid-grey-color;
+    }
+  }
+  .panel-heading .fa-chevron:after {
+    content: "\f078";
+  }
+  .panel-heading.collapsed .fa-chevron:after {
+      content: "\f054";
   }
   ol.bibliography {
     list-style: none;
@@ -324,13 +348,6 @@ footer.sticky-bottom {
         font-weight: bolder;
       }
       .author {
-        a {
-          border-bottom: 1px dashed $theme-color;
-          &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
-          }
-        }
         > em {
           font-style: normal;
           font-weight: bolder;
@@ -339,12 +356,80 @@ footer.sticky-bottom {
       .links {
         a.btn {
           background-color: $theme-color;
-          color: $grey-color-dark;
+          color: $light-grey-color;
           border-radius: 8px;
           padding: 8px;
           &:hover {
-            color: $grey-color-light;
-            text-decoration: underline;
+            color: $text-color;
+          }
+        }
+      }
+      .hidden {
+        font-size: 0.875rem;
+        max-height: 0px;
+        overflow: hidden;
+        text-align: justify;
+        -webkit-transition: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+
+        p {
+          line-height: 1.4em;
+          margin: 10px;
+        }
+        pre {
+          font-size: 1em;
+          line-height: 1.4em;
+          padding: 10px;
+        }
+      }
+      .hidden.open {
+        max-height: 100em;
+        -webkit-transition: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+      }
+      div.abstract.hidden {
+        border: dashed 1px white;
+      }
+      div.abstract.hidden.open {
+        border-color: $theme-color;
+      }
+    }
+  }
+}
+
+
+// References
+
+.references {
+  margin-top: 2rem;
+  ol.bibliography {
+    padding: 0;
+    margin-top: 0;
+    li {
+      margin: 1rem 1rem;
+      .title {
+        font-weight: bolder;
+      }
+      .author {
+        > em {
+          font-style: normal;
+          font-weight: bolder;
+        }
+      }
+      .links {
+        a.btn {
+          background-color: $theme-color;
+          color: $light-grey-color;
+          border-radius: 8px;
+          padding: 8px;
+          &:hover {
+            color: $text-color;
           }
         }
       }
