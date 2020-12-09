@@ -9,7 +9,6 @@ nav_order: 2
 <!-- _pages/publications.md -->
 <div class="publications">
 
-<<<<<<< HEAD
   <p style="text-align:right"><button class="btn btn-expand" type="button">Expand/Collapse All</button></p>
   <div class="card shadow-none">
     <h2 class="card-header">
@@ -56,17 +55,5 @@ nav_order: 2
         </div>  
       </div>
     {% endfor %}
-=======
-<div class="publications">
-
-{% for y in page.years %}
-  {% if y==2020 %}
-    <h2 class="year_first">{{y}}</h2>
-  {% else %}
-    <h2 class="year">{{y}}</h2>
-  {% endif %}
-  {% bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
->>>>>>> b0bfa9e (Updated to al-folio v0.3.3)
 
 </div>

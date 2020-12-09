@@ -2,7 +2,11 @@
 layout: page
 title: 3D Orientation Estimation
 description: Image gradients and directional statistics for determining fibre alignment
+<<<<<<< HEAD
 img: assets/img/range_orig213.png
+=======
+img: /assets/img/range_orig213.png
+>>>>>>> 9ee2611 (Added orientation project)
 importance: 1
 ---
 

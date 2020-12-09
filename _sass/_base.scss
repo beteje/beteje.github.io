@@ -604,6 +604,9 @@ footer.sticky-bottom {
   .table th {
     background-color: var(--global-theme-color);
   }
+  .table th {
+    background-color: $theme-color;
+  }
 }
 
 table.project-table {

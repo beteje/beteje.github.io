@@ -64,7 +64,6 @@ To calculate the amplitude cross-correlation both sets of LFP data are filtered 
 To ensure the significance of the results a bootstrap procedure is used, shifting the data by a random amount and repeating to allow a confidence interval to be determined. If the result from the original cross-correlation is greater than the 95% confidence interval from the bootstrapped values then the result is considered significant.
 
 <div class="row align-items-center">
-<<<<<<< HEAD
   <div class="col-sm-4 mt-3 mt-md-0">
     {% include figure.html path="/assets/img/AmplitudeXCorrTheta.png" alt="" title="Example of amplitude cross-correlation" caption="Example of amplitude cross-correlation in the theta frequency band (peak marked with red star)." zoomable=true  class="img-fluid rounded z-depth-1 p-2" %}
   </div>
@@ -74,39 +73,22 @@ To ensure the significance of the results a bootstrap procedure is used, shiftin
   <div class="col-sm-4 mt-3 mt-md-0">
     {% include figure.html path="/assets/img/AmplitudeXCorrHist.png" alt="" title="Histograms of amplitude cross-correlation" caption="Histograms of peak lag times for several rats (theta band top, gamma band bottom)." zoomable=true class="img-fluid rounded z-depth-1 p-2" %}
   </div>
-=======
-  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrTheta.png' | relative_url }}" alt="" title="Example of amplitude cross-correlation"/></div>
-  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrGamma.png' | relative_url }}" alt="" title="Example of amplitude cross-correlation"/></div>
-  <div class="col-sm-4 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/AmplitudeXCorrHist.png' | relative_url }}" alt="" title="Histograms of amplitude cross-correlation"/></div>
-</div>
-<div class = "caption text-right">
-  Left: Example of amplitude cross-correlation in the theta frequency band (peak marked with red star). Middle: Example of amplitude cross-correlation in the gamma frequency band. Right: Histograms of peak lag times for several rats (theta band top, gamma band bottom).
->>>>>>> b0bfa9e (Updated to al-folio v0.3.3)
 </div>
 
 ---
 
 ### Code
-<<<<<<< HEAD
 The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank" rel="noopener"}   
 The phase locking and spike field coherence code is based on the methods described by [Rutishauser et al.](http://doi.org/10.1038/nature08860){:target="_blank" rel="noopener"}.
 =======
 The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank"}   
 The phase locking and spike field coherence code is based on the methods described by Rutishauser et al.[^4].
->>>>>>> b0bfa9e (Updated to al-folio v0.3.3)
 
 ---
 
 ### References
-<<<<<<< HEAD
 <div class="references">
   {% bibliography --cited %}
 </div>
 
 [^4]: U. Rutishauser, I. B. Ross, A. N. Mamelak, and E. M. Schuman, Human Memory Strength is Predicted by Theta-Frequency Phase-Locking of Single Neurons, Nature, 2010 vol. 464 no. 7290 pp. 903--907
-=======
-[^1]: B. Cao, J. Wang, M. Shahed, B. Jelfs, R. H. M. Chan, and Y. Li, Vagus Nerve Stimulation Alters Phase Synchrony of the Anterior Cingulate Cortex and Facilitates Decision Making in Rats, Scientific Reports, 2016 vol. 6 no. 35135 [\[doi\]](http://doi.org/10.1038/srep35135){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_SciRep_SM.pdf){:target="_blank"}
-[^2]: L. Mu, J. Wang, B. Cao, B. Jelfs, R. H. M. Chan, X. Xu, M. Hasan, X. Zhang, and Y. Li, Impairment of Cognitive Function by Chemotherapy: Association with the Disruption of Phase-Locking and Synchronization in Anterior Cingulate Cortex, Molecular Brain, 2015 vol. 8 no. 32 [\[doi\]](http://doi.org/10.1186/s13041-015-0125-y){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2015_MolecularBrain.pdf){:target="_blank"}
-[^3]: B. Cao, J. Wang, X. Zhang, X. Yang, D. C.-H. Poon, B. Jelfs, R. H. M. Chan, J. C.-Y. Wu, and Y. Li, Impairment of Decision Making and Disruption of Synchrony Between Basolateral Amygdala and Anterior Cingulate Cortex in the Maternally Separated Rat, Neurobiology of Learning and Memory, 2016 vol. 136 pp. 74–85 [\[doi\]](http://doi.org/10.1016/j.nlm.2016.09.015){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_NeurobioLearnMem.pdf){:target="_blank"}
-[^4]: U. Rutishauser, I. B. Ross, A. N. Mamelak, and E. M. Schuman, Human Memory Strength is Predicted by Theta-Frequency Phase-Locking of Single Neurons, Nature, 2010 vol. 464 no. 7290 pp. 903--907 [\[doi\]](http://doi.org/10.1038/nature08860){:target="_blank"}
->>>>>>> b0bfa9e (Updated to al-folio v0.3.3)
