@@ -57,7 +57,6 @@ This code contains the several implementations of the LAP framework and a signal
 ---
 
 ### References
-<<<<<<< HEAD
 <div class="references">
   {% bibliography --cited %}
 </div>
