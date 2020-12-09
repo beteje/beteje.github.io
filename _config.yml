@@ -254,13 +254,12 @@ scholar:
   last_name: Jelfs
   first_name: [Beth, B.]
 
-  style: apa
+  style: ieee
   locale: en
 
   type_order: [article, incollection, inproceedings]
-  sort_by: year
-  group_by: type
   order: descending
+  type_aliases: { electronic: Preprints }
 
   source: /_bibliography/
   bibliography: papers.bib

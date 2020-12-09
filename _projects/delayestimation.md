@@ -26,7 +26,7 @@ To allow for time-varying delays we assume the delay is constant within a local 
     Common local all-pass filter framework.
 </div>
 
-For an ensemble of signals with the same delay between each consecutive pair of signals we can estimate a common LAP (CLAP) filter. To allow estimation of both small and large and slowly and quickly varying delays the multiscale CLAP uses an iterative framework starting with large filters estimating the delay, aligning the signals and then repeating with a smaller filter[^1].
+For an ensemble of signals with the same delay between each consecutive pair of signals we can estimate a common LAP (CLAP) filter. To allow estimation of both small and large and slowly and quickly varying delays the multiscale CLAP uses an iterative framework starting with large filters estimating the delay, aligning the signals and then repeating with a smaller filter {% cite Gilliam2018a %}.
 
 <div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/Multiscale_CLAP.png' | relative_url }}" alt="" title="Multiscale CLAP framework"/></div>
@@ -54,4 +54,6 @@ This code contains the several implementations of the LAP framework and a signal
 ---
 
 ### References
-[^1]: C. Gilliam A. Bingham, T. Blu, and B. Jelfs, Time-Varying Delay Estimation Using Common Local All-Pass Filters with Application to Surface Electromyography, Proc. IEEE International Conference on Acoustics, Speech and Signal Processing, 2018 pp. 841–845 [\[doi\]](http://doi.org/10.1109/icassp.2018.8461390){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2018_ICASSP.pdf){:target="_blank"}
+<div class="references">
+  {% bibliography --cited %}
+</div>

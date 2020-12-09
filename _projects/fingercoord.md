@@ -36,21 +36,21 @@ Muscle Synergies:
     Time-varying principal component analysis for movement synergy extraction.
 </div>
 
-Results showed that a small number of components accounted for the majority of the variance in the data but that these components are common across the groups. Classification results showed accurate classification was obtained from components accounting for only small amount of variance primarily related to the abduction of the fingers[^1].
+Results showed that a small number of components accounted for the majority of the variance in the data but that these components are common across the groups. Classification results showed accurate classification was obtained from components accounting for only small amount of variance primarily related to the abduction of the fingers {% cite Jelfs2015 %}.
 
 <div class="row align-items-center">
   <div class="col-sm-6 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/VAF-10.png' | relative_url }}" alt="" title="Variance accounted for"/></div>
-  <div class="col-sm-6 mt-3 mt-md0 table-responsive"><table table-sm table-borderless>
-    <tr><th style="padding:1rem;color:#2698BA;">Finger</th><th style="padding:1rem;color:#2698BA;">Accuracy (%)</th><th style="padding:1rem;color:#2698BA;">No. Components</th><th style="padding:1rem;color:#2698BA;">VAF</th></tr>
-    <tr><td style="padding:10px;">Thumb</td><td style="padding:10px;text-align:center;">93.68</td><td style="padding:10px;text-align:center;">15/253</td><td style="padding:10px;text-align:center;">1.38</td></tr>
-    <tr><td style="padding:10px;">Index</td><td style="padding:10px;text-align:center">94.81</td><td style="padding:10px;text-align:center">14/212</td><td style="padding:10px;text-align:center">0.11</td></tr>
-    <tr><td style="padding:10px;">Middle</td><td style="padding:10px;text-align:center">93.40</td><td style="padding:10px;text-align:center">17/409</td><td style="padding:10px;text-align:center">2.70</td></tr>
-    <tr><td style="padding:10px;">Ring</td><td style="padding:10px;text-align:center">96.52</td><td style="padding:10px;text-align:center">18/115</td><td style="padding:10px;text-align:center">5.97</td></tr>
-    <tr><td style="padding:10px;">Little</td><td style="padding:10px;text-align:center">98.29</td><td style="padding:10px;text-align:center">17/175</td><td style="padding:10px;text-align:center">0.96</td></tr>
+  <div class="col-sm-6 mt-3 mt-md0 table-responsive"><table table-sm table-borderless class="project-table">
+    <tr><th style="text-align:left;">Finger</th><th>Accuracy (%)</th><th>No. Components</th><th style="padding:1rem;color:#2698BA;">VAF</th></tr>
+    <tr><td style="text-align:left;">Thumb</td><td>93.68</td><td>15/253</td><td>1.38</td></tr>
+    <tr><td style="text-align:left;">Index</td><td>94.81</td><td>14/212</td><td>0.11</td></tr>
+    <tr><td style="text-align:left;">Middle</td><td>93.40</td><td>17/409</td><td>2.70</td></tr>
+    <tr><td style="text-align:left;">Ring</td><td>96.52</td><td>18/115</td><td>5.97</td></tr>
+    <tr><td style="text-align:left;">Little</td><td>98.29</td><td>17/175</td><td>0.96</td></tr>
   </table></div>
 </div>
 <div class="caption text-right">
-    Left: The variance accounted for by the first 10 components. Right: Classification results showing the accuracy, number of compontents and variance accounted for, for each of the fingers.
+    Left: The variance accounted for by the first 10 components. Right: Classification results showing the accuracy, number of components and variance accounted for, for each of the fingers.
 </div>
 
 ---
@@ -67,7 +67,7 @@ The muscles which control the fingers are primarily located in the forearm and f
     Nonnegative matrix factorization.
 </div>
 
-To deal with the complexity of the neuromuscular system and extend beyond the variance accounted for as a measure we proposed a method based on using fuzzy entropy as a similarity measure[^2]. Examples of the differences between the synergies extracted using 16 channels of EMG recorded from the arm show compared to an alternating least squares NMF our method places greater significance on a smaller number of muscles.
+To deal with the complexity of the neuromuscular system and extend beyond the variance accounted for as a measure we proposed a method based on using fuzzy entropy as a similarity measure {% cite Jelfs2016 %}. Examples of the differences between the synergies extracted using 16 channels of EMG recorded from the arm show compared to an alternating least squares NMF our method places greater significance on a smaller number of muscles.
 
 <div class="row justify-content-center">
   <div class="col-sm-10 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/Subj1_K3.png' | relative_url }}" alt="" title="Synergies for Subject 1"/></div>
@@ -87,5 +87,6 @@ Fuzzy entropy NMF code can be found here: [Entropy_NMF](https://github.com/betej
 ---
 
 ### References
-[^1]: B. Jelfs, S. Zhou, B. K. Y. Wong, C. Tin, and R. H. M. Chan, Recruitment of Small Synergistic Movement Makes a Good Pianist, in Proc. Annual International Conference of the IEEE Engineering in Medicine and Biology Society, 2015 pp. 242–245 [\[doi\]](http://doi.org/10.1109/embc.2015.7318345){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2015_EMBC.pdf){:target="_blank"}
-[^2]: B. Jelfs, L. Li, C. Tin, and R. H. M. Chan, Fuzzy Entropy Based Nonnegative Matrix Factorization for Muscle Synergy Extraction, in Proc. IEEE International Conference on Acoustics, Speech and Signal Processing, 2016 pp. 739–743 [\[doi\]](http://doi.org/10.1109/icassp.2016.7471773){:target="_blank"}[\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_ICASSP.pdf){:target="_blank"}
+<div class="references">
+  {% bibliography --cited %}
+</div>
