@@ -26,7 +26,7 @@ By calculating the circular mean of the distribution of the phase angles and tes
 
 There is also an option in the toolbox to calculate the phase locking with a time offset between the neuron spike action potential and the LFP to allow analysis of whether the LFP leads or lags the action potential.
 
-The effects of either increased[^1] or disrupted[^2] phase locking our results have shown have an impact on learning and memory.
+The effects of either increased {% cite Cao2016 %} or disrupted {% cite Mu2015 %} phase locking our results have shown have an impact on learning and memory.
 
 <div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/PhaseLocking.jpg' | relative_url }}" alt="" title="Significance of phase locking"/></div>
@@ -44,7 +44,7 @@ To compute the SFC for each spike a segment of the LFP data centered on the spik
 
 Finally the spike field coherence is the fSTA over the STP(f) expressed as a percentage.
 
-Similarly to the phase locking our results have shown changes in SFC specifically in the theta frequency band have impacts on learning and memory[^1] [^3].
+Similarly to the phase locking our results have shown changes in SFC specifically in the theta frequency band have impacts on learning and memory {% cite Cao2016 Cao2016a %}.
 <div class="row align-items-center">
   <div class="col-sm-7 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/SFC_VNS.jpg' | relative_url }}" alt="" title="Example of spike field coherence"/></div>
   <div class="col-sm-5 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/SFC_bands.jpg' | relative_url }}" alt="" title="Example of SFC in frequency bands"/></div>
@@ -75,12 +75,13 @@ To ensure the significance of the results a bootstrap procedure is used, shiftin
 
 ### Code
 The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank"}   
-The phase locking and spike field coherence code is based on the methods described by Rutishauser et al.[^4].
+The phase locking and spike field coherence code is based on the methods described by [Rutishauser et al.](http://doi.org/10.1038/nature08860){:target="_blank"}.
 
 ---
 
 ### References
-[^1]: B. Cao, J. Wang, M. Shahed, B. Jelfs, R. H. M. Chan, and Y. Li, Vagus Nerve Stimulation Alters Phase Synchrony of the Anterior Cingulate Cortex and Facilitates Decision Making in Rats, Scientific Reports, 2016 vol. 6 no. 35135 [\[doi\]](http://doi.org/10.1038/srep35135){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_SciRep_SM.pdf){:target="_blank"}
-[^2]: L. Mu, J. Wang, B. Cao, B. Jelfs, R. H. M. Chan, X. Xu, M. Hasan, X. Zhang, and Y. Li, Impairment of Cognitive Function by Chemotherapy: Association with the Disruption of Phase-Locking and Synchronization in Anterior Cingulate Cortex, Molecular Brain, 2015 vol. 8 no. 32 [\[doi\]](http://doi.org/10.1186/s13041-015-0125-y){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2015_MolecularBrain.pdf){:target="_blank"}
-[^3]: B. Cao, J. Wang, X. Zhang, X. Yang, D. C.-H. Poon, B. Jelfs, R. H. M. Chan, J. C.-Y. Wu, and Y. Li, Impairment of Decision Making and Disruption of Synchrony Between Basolateral Amygdala and Anterior Cingulate Cortex in the Maternally Separated Rat, Neurobiology of Learning and Memory, 2016 vol. 136 pp. 74–85 [\[doi\]](http://doi.org/10.1016/j.nlm.2016.09.015){:target="_blank"} [\[pdf\]]({{ site.baseurl }}/assets/pdf/2016_NeurobioLearnMem.pdf){:target="_blank"}
-[^4]: U. Rutishauser, I. B. Ross, A. N. Mamelak, and E. M. Schuman, Human Memory Strength is Predicted by Theta-Frequency Phase-Locking of Single Neurons, Nature, 2010 vol. 464 no. 7290 pp. 903--907 [\[doi\]](http://doi.org/10.1038/nature08860){:target="_blank"}
+<div class="references">
+  {% bibliography --cited %}
+</div>
+
+[^4]: U. Rutishauser, I. B. Ross, A. N. Mamelak, and E. M. Schuman, Human Memory Strength is Predicted by Theta-Frequency Phase-Locking of Single Neurons, Nature, 2010 vol. 464 no. 7290 pp. 903--907
