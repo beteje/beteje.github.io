@@ -82,21 +82,6 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:   # your blog must have a name for it to show up in the nav bar
-blog_description:
-permalink:
-
-# Pagination
-pagination:
-  enabled: true
-
-# Comments
-disqus_shortname: # put your disqus shortname
-
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
 blog_name: News  # your blog must have a name for it to show up in the nav bar
 blog_description: Latest updates
 permalink: /news/:year/:title/
@@ -104,6 +89,9 @@ permalink: /news/:year/:title/
 # Pagination
 pagination:
   enabled: true
+
+# Comments
+disqus_shortname: # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -166,49 +154,6 @@ plugins:
   - jekyll-target-blank
   - jekyll-twitter-plugin
   - jemoji
-
-# Sitemap settings
-defaults:
-  - scope:
-      path: "assets/**/*.*"
-    values:
-      sitemap: false
-# Extras
-github: [metadata]
-
-# -----------------------------------------------------------------------------
-# Jekyll optimization
-# -----------------------------------------------------------------------------
-
-# HTML remove comments (<!-- .... -->)
-remove_HTML_comments: false
-
-# HTML beautifier (_plugins/beautify.rb).
-# Source: https://github.com/threedaymonk/htmlbeautifier
-beautify: false # This function has conflict with the code snippets, they can be displayed incorrectly
-
-# HTML minify (_plugins/minify.rb).
-# Source: https://www.ffbit.com/blog/2021/03/17/html-minification-in-jekyll.html
-minify: false
-
-# CSS/SASS minify
-sass:
-  style: compressed
-
-# -----------------------------------------------------------------------------
-# Jekyll Archives
-# -----------------------------------------------------------------------------
-
-jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-  layouts:
-    year: archive-year
-    tag: archive-tag
-    category: archive-category
-  permalinks:
-    year: '/blog/:year/'
-    tag: '/blog/tag/:name/'
-    category: '/blog/category/:name/'
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
