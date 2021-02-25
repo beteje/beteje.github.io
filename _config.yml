@@ -39,6 +39,15 @@ footer_fixed: true
 
 
 # -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
+
+navbar_fixed: true
+footer_fixed: true
+# TODO: add layout settings (single page vs. multi-page)
+
+
+# -----------------------------------------------------------------------------
 # Open Graph
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
