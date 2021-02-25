@@ -107,7 +107,7 @@ This method is efficient to computer, can perform the per voxel polar axis estim
 
 ---
 
-### Fibrous Scaffold data
+### Fibrous Scaffold Data
 <div class="row align-items-center">
   <div class="col-sm-5 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/scaffold1.gif' | relative_url }}" alt="" title="Random Scaffold Data"/></div>
   <div class="col-sm-2 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/ColourWheel.png' | relative_url }}" alt="" title="Colour Wheel"/></div>

@@ -4,15 +4,19 @@
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
+p, h1, h2, h5, h6, em, div, span, strong {
   color: var(--global-text-color);
+}
+
+h3, h4 {
+  color: var(--global-theme-color);
 }
 
 a, table.table a {
   color: var(--global-theme-color);
   &:hover {
-    color: var(--global-theme-color);
-    text-decoration: underline;
+    color: var(--global-hover-color);
+    text-decoration: none;
   }
   &:hover:after {
     width: 100%;
@@ -56,7 +60,7 @@ a, table.table a {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 25%;
     .address {
       p { display: block; }
     }
@@ -65,11 +69,11 @@ a, table.table a {
 
 .post-description {
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  border-bottom: 1px solid var(--global-theme-color);
   a {
-    color: inherit;
+    color: var(--global-theme-color);
     &:hover {
-      color: var(--global-theme-color);
+      color: var(--global-hover-color);
       text-decoration: none;
     }
   }
@@ -174,7 +178,7 @@ a, table.table a {
     a {
       color: var(--global-icon-color);
       &:hover {
-        color: var(--global-theme-color);
+        color: var(--global-hover-color);
       }
     }
   }
@@ -196,7 +200,7 @@ footer.fixed-bottom {
   a {
     color: var(--global-footer-link-color);
     &:hover {
-      color: pink;
+      color: var(--global-hover-color);
       text-decoration: none;
     }
   }
@@ -233,7 +237,7 @@ footer.sticky-bottom {
     padding-top: 2rem;
     padding-bottom: 2rem;
     .post-meta {
-      color: $light-grey-color;
+      color: $grey-color-light;
       font-size: 0.875rem;
       margin-bottom: 0;
     }
@@ -252,7 +256,7 @@ footer.sticky-bottom {
     .page-link {
       color: var(--global-text-color);
       &:hover {
-        color: $black-color;
+        color: var(--global-hover-color);
       }
     }
     &.active .page-link {
@@ -265,55 +269,42 @@ footer.sticky-bottom {
 }
 
 
-// Distill
-
-.distill {
-  a:hover {
-    border-bottom-color: var(--global-theme-color);
-    text-decoration: none;
-  }
-}
-
-
 // Projects
 
 .projects {
   .grid-item {
-    width: 250px;
+    width: 300px;
     margin-bottom: 10px;
     a {
-      color: black;
+      color: var(--global-theme-color);
       text-decoration: none;
       &:hover {
-        color: var(--global-theme-color);
+        color: var(--global-hover-color);
       }
     }
   }
   .card img {
     width: 100%;
   }
-  .table th {
-    background-color: $theme-color;
-  }
 }
 
 table.project-table {
   th {
-    color: $theme-color;
+    color: $cyan-color;
     background-color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 10px;
     padding-right: 10px;
-    border-top: 1px solid $theme-color;
-    border-bottom: 1px solid $theme-color;
+    border-top: 1px solid $cyan-color;
+    border-bottom: 1px solid $cyan-color;
     text-align: center;
   }
   tr{
-    background-color: lighten($theme-color, 50%);
+    background-color: lighten($cyan-color, 50%);
   }
   tr.darker {
-    background-color: lighten($theme-color, 40%);
+    background-color: lighten($cyan-color, 40%);
 
   }
   td {
@@ -326,19 +317,6 @@ table.project-table {
 
 .publications {
   margin-top: 2rem;
-  h1 {
-    color: var(--global-theme-color);
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  h2 {
-    margin-bottom: 1rem;
-    span {
-      font-size: 1.5rem;
-    }
-  }
   h2.year {
     color: $grey-color-light;
     border-top: 1px solid $grey-color-light;
@@ -352,10 +330,10 @@ table.project-table {
   }
   .btn-expand {
     background-color: var(--global-theme-color);
-    color: $light-grey-color;
+    color: $grey-color-light;
     border-radius: 10px;
     &:hover {
-      color: $mid-grey-color;
+      color: var(--global-hover-color);
     }
   }
   .panel-heading .fa-chevron:after {
@@ -370,27 +348,7 @@ table.project-table {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
-      .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          a {
-            color: white;
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
-        }
-      }
+      margin: 1rem 2rem;
       .title {
         font-weight: bolder;
       }
@@ -403,11 +361,11 @@ table.project-table {
       .links {
         a.btn {
           background-color: var(--global-theme-color);
-          color: $light-grey-color;
+          color: $grey-color-light;
           border-radius: 8px;
           padding: 8px;
           &:hover {
-            color: var(--global-text-color);
+            color: var(--global-hover-color);
           }
         }
       }
@@ -444,7 +402,7 @@ table.project-table {
         border: dashed 1px white;
       }
       div.abstract.hidden.open {
-        border-color: $theme-color;
+        border-color: var(--global-theme-color);
       }
     }
   }
@@ -465,21 +423,18 @@ table.project-table {
       }
       .author {
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
+          font-weight: bolder;
         }
       }
       .links {
         a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          background-color: var(--global-theme-color);
+          color: $grey-color-light;
+          border-radius: 8px;
+          padding: 8px;
           &:hover {
-            color: var(--global-theme-color);
-            border-color: var(--global-theme-color);
+            color: var(--global-hover-color);
           }
         }
       }
@@ -516,7 +471,7 @@ table.project-table {
         border: dashed 1px var(--global-bg-color);
       }
       div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+        border-color: var(--global-theme-color);
       }
     }
   }

@@ -73,21 +73,6 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:   # your blog must have a name for it to show up in the nav bar
-blog_description:
-permalink:
-
-# Pagination
-pagination:
-  enabled: true
-
-# Comments
-disqus_shortname: # put your disqus shortname
-
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
 blog_name: News  # your blog must have a name for it to show up in the nav bar
 blog_description: Latest updates
 permalink: /news/:year/:title/
@@ -95,6 +80,9 @@ permalink: /news/:year/:title/
 # Pagination
 pagination:
   enabled: true
+
+# Comments
+disqus_shortname: # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -132,7 +120,15 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude: [vendor]
+exclude:
+  - bin
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+  - .git
 
 # Plug-ins
 plugins:
@@ -142,8 +138,6 @@ plugins:
   - jekyll/scholar
   - jekyll-twitter-plugin
   - jemoji
-  # - bootstrap
-  # - material-sass
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
@@ -183,7 +177,7 @@ enable_panelbear_analytics: false
 enable_mansory:             true
 enable_math:                true
 enable_tooltips:            false
-enable_darkmode:            true
+enable_darkmode:            false
 show_social_icons:          false
 
 # -----------------------------------------------------------------------------

@@ -17,12 +17,12 @@ social: true
     {% else %}
     <a href="{{ project.url | relative_url }}">
     {% endif %}
-      <div class="card hoverable">
+      <div class="card hoverable mml-2 mr-2">
         {% if project.img %}
         <img src="{{ project.img | relative_url }}" alt="project thumbnail">
         {% endif %}
         <div class="card-body">
-          <h2 class="card-title text-lowercase">{{ project.title }}</h2>
+          <h3 class="card-title">{{ project.title }}</h3>
           <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if project.github %}
