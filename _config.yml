@@ -115,21 +115,6 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:   # your blog must have a name for it to show up in the nav bar
-blog_description:
-permalink:
-
-# Pagination
-pagination:
-  enabled: true
-
-# Comments
-disqus_shortname: # put your disqus shortname
-
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
 blog_name: News  # your blog must have a name for it to show up in the nav bar
 blog_description: Latest updates
 permalink: /news/:year/:title/
@@ -137,6 +122,9 @@ permalink: /news/:year/:title/
 # Pagination
 pagination:
   enabled: true
+
+# Comments
+disqus_shortname: # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -226,24 +214,6 @@ jekyll-minifier:
   exclude: ['robots.txt']
   uglifier_args:
     harmony: true
-
-# -----------------------------------------------------------------------------
-# Jekyll Archives
-# -----------------------------------------------------------------------------
-
-jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-  layouts:
-    year: archive-year
-    tag: archive-tag
-    category: archive-category
-  permalinks:
-    year: '/blog/:year/'
-    tag: '/blog/tag/:name/'
-    category: '/blog/category/:name/'
-
-display_tags: ['formatting', 'images', 'links', 'math', 'code'] # these tags will be displayed on the front page of your blog
-display_categories: ['blockquotes'] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
