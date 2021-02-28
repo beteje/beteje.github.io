@@ -1,97 +1,34 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
-
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+- title: Summary
+  note: <p>I am currently a recipient of a Vice Chancellor's Research Fellowship at RMIT University where I work in the School of Engineering. Before this I worked as a Research Fellow at City University of Hong Kong. Where I worked in the <a href="https://cityucompuneurolab.github.io/" target="_blank">Laboratory for Computational Neuroscience</a> with my research focusing on hierarchical models of finger coordination.</p>
+    <p>I have also had the opportunity to apply my research in a number of different areas. Prior to moving to Hong Kong I was a member of the <a href="https://www.ucl.ac.uk/medical-physics-biomedical-engineering/nirs" target="_blank">Near Infrared Spectroscopy Group</a> at the Biomedical Optics Research Lab in the Department of Medical Physics & Bioengineering at University College London, where I worked on a Wellcome Trust funded project entitled "Integrating monitoring & modelling for real time tracking of cerebral circulation and metabolism." While at UCL I was involved with several different outreach events and also acted as an event manager for the inaugral <a href="https://pintofscience.com/" target="_blank">Pint of Science</a> festival.</p>
+    <p>Extending beyond biomedical applications, I have also worked in the <a href="http://bayley.chem.ox.ac.uk/" target="_blank">Bayley Lab</a> in the Chemistry Department at the University of Oxford jointly with the <a href="http://wwwf.imperial.ac.uk/~nsjones/" target="_blank">Systems & Signals Group</a> in the Physics Department (now at Imperial Mathematics Department) investigating statistical signal processing techniques to aid the use of nanopore technology for DNA sequencing. While at Oxford I was on the organising committee of <a href="http://engeneious.chem.ox.ac.uk/index.htm" target="_blank">"enGENEious"</a> a conference on microbial engineering.</p>
+    <p>My PhD research was in statistical analysis of signal processing methods for machine learning application. In particular for the assessment of changes in the nature of processed signals. In this case the processed signals ranged from EEG data to wind recordings. I completed my PhD at Imperial College London with <a href="http://www.commsp.ee.ic.ac.uk/~mandic/" target="_blank">Prof. Danilo Mandic</a> in the Communications and Signal Processing Group in the Department of Electrical & Electronic Engineering.</p>
 
 - title: Experience
-  type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Vice Chancellor's Research Fellow
+      date: 2017 - present
+      location: School of Engineering, RMIT University, Melbourne, Australia
+    - title: Research Fellow
+      date: 2015 - 2016
+      location: Department of Electronic Engineering, City University of Hong Kong, Hong Kong
+    - title: Postdoctoral Fellow & International Transition Team Graduate Teaching Assistant
+      date: 2013 - 2015
+      location: Department of Electronic Engineering, City University of Hong Kong, Hong Kong
+    - title: Postdoctoral Research Associate
+      date: 2011 - 2013
+      location: Department of Medical Physics & Bioengineering, University College London, London, UK
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - 'I spent the third year of my undergraduate studies as an Erasmus exchange student at Linköping University, Sweden'
+    - title: Postdoctoral Research Assistant
+      date: 2010 - 2011
+      location: Department of Chemistry & Department of Physics, University of Oxford, Oxford, UK
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
+- title: Education
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - date: April 2010
+      title: PhD - Collaborative Adaptive Filtering for Machine Learning
+      location: Department of Electrical & Electronic Engineering, Imperial College London, London, UK
+    - date: July 2005
+      title: MEng Electronic & Software Engineering
+      location: Department of Engineering, University of Leicester, Leicester, UK

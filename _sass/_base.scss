@@ -507,7 +507,22 @@ footer.sticky-bottom {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-
+  border-bottom: 1px solid $grey-color-light;
+  list-style: none;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  .post-meta {
+    color: $grey-color-light;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
   li {
     border-bottom: 1px solid var(--global-divider-color);
     list-style: none;
@@ -653,8 +668,8 @@ table.project-table {
     }
   }
   .btn-expand {
-    background-color: var(--global-theme-color);
-    color: $grey-color-light;
+    background-color: $light-cyan-color; //var(--global-theme-color);
+    color: $grey-color-dark;
     border-radius: 10px;
     &:hover {
       color: var(--global-hover-color);
@@ -686,8 +701,8 @@ table.project-table {
       }
       .links {
         a.btn {
-          background-color: var(--global-theme-color);
-          color: $grey-color-light;
+          background-color: $light-cyan-color;//var(--global-theme-color);
+          color: $grey-color-dark;
           border-radius: 8px;
           padding: 8px;
           &:hover {
