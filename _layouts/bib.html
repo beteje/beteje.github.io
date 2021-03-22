@@ -48,25 +48,26 @@
       <div class="periodical">
         {% if entry.type == "article" %}
           <em>{{entry.journal}},</em>
+        {% elsif entry.type == "electronic" %}
+          {% if entry.howpublished %}
+            <em>{{entry.howpublished}}</em>
+          {% endif %}
         {% elsif entry.type == "inproceedings" %}
           In <em>{{entry.booktitle}},</em>
         {% elsif entry.type == "incollection" %}
           In <em>{{entry.booktitle}}</em>, {{entry.editor}} (eds), {{entry.publisher}},
         {% endif %}
         {% if entry.year %}
-          {{entry.year}}
+          {{entry.year}},
         {% endif %}
         {% if entry.volume %}
-          vol. {{entry.volume}}
+          vol. {{entry.volume}},
         {% endif %}
         {% if entry.number %}
-          no. {{entry.number}}
+          no. {{entry.number}}{% if entry.pages %},{% else %}.{% endif %}
         {% endif %}
         {% if entry.pages %}
-          pp. {{entry.pages}}
-        {% endif %}
-        {% if entry.arxiv %}
-          arXiv:{{entry.arxiv}}
+          pp. {{entry.pages}}.
         {% endif %}
       </div>
     {% endif %}
@@ -75,14 +76,14 @@
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0 mr-0" role="button">abstract</a>
       {% endif %}
+      {% if entry.doi %}
+        <a href="http://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">doi</a>
+      {% endif %}
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">arXiv</a>
       {% endif %}
-      {% if entry.doi %}
-        <a href="http://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">doi</a>
-        {% endif %}
-      {% if entry.html %}
-        <a href="{{ entry.html }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">html</a>
+      {% if entry.url %}
+        <a href="{{ entry.url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">html</a>
       {% endif %}
       {% if entry.pdf %}
         <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">pdf</a>
