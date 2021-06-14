@@ -90,12 +90,15 @@ This review has found that more research for the analysis and evaluation of the 
   supp     = {2016_SciRep_SM.pdf},
 }
 
-@Electronic{She2016,
-  author   = {Q. She and B. Jelfs and A. S. Charles and R. H. M. Chan},
-  title    = {Network Modeling of Short Over-Dispersed Spike-Counts: A Hierarchical Parametric Empirical Bayes Framework},
-  abstract = {Accurate statistical models of neural spike responses can characterize the information carried by neural populations. Yet, challenges in recording at the level of individual neurons commonly results in relatively limited samples of spike counts, which can lead to model overfitting. Moreover, current models assume spike counts to be Poisson-distributed, which ignores the fact that many neurons demonstrate over-dispersed spiking behavior. The Negative Binomial Generalized Linear Model (NB-GLM) provides a powerful tool for modeling over-dispersed spike counts. However, maximum likelihood based standard NB-GLM leads to unstable and inaccurate parameter estimations. Thus, we propose a hierarchical parametric empirical Bayes method for estimating the parameters of the NB-GLM. Our method integrates Generalized Linear Models (GLMs) and empirical Bayes theory to: (1) effectively capture over-dispersion nature of spike counts from retinal ganglion neural responses; (2) significantly reduce mean square error of parameter estimations when compared to maximum likelihood based method for NB-GLMs; (3) provide an efficient alternative to fully Bayesian inference with low computational cost for hierarchical models; and (4) give insightful findings on both neural interactions and spiking behaviors of real retina cells. We apply our approach to study both simulated data and experimental neural data from the retina. The simulation results indicate the new framework can efficiently and accurately retrieve the weights of functional connections among neural populations and predict mean spike counts. The results from the retinal datasets demonstrate the proposed method outperforms both standard Poisson and Negative Binomial GLMs in terms of the predictive log-likelihood of held-out data.},
-  arxiv    = {1605.02869},
-  pdf      = {2016_SODS.pdf},
+@Electronic{She2021,
+  author       = {Q. She and Xiaoli Wu and B. Jelfs and A. S. Charles and R. H. M. Chan},
+  howpublished = {IEEE Transactions on Signal Processing (early access)},
+  title        = {An Efficient and Flexible Spike Train Model via Empirical Bayes},
+  abstract     = {Accurate statistical models of neural spike responses can characterize the information carried by neural populations. But the limited samples of spike counts during recording usually result in model overfitting. Besides, current models assume spike counts to be Poisson-distributed, which ignores the fact that many neurons demonstrate over-dispersed spiking behaviour. Although the Negative Binomial Generalized Linear Model (NB-GLM) provides a powerful tool for modeling over-dispersed spike counts, the maximum likelihood-based standard NB-GLM leads to highly variable and inaccurate parameter estimates. Thus, we propose a hierarchical parametric empirical Bayes method to estimate the neural spike responses among neuronal population. Our method integrates both Generalized Linear Models (GLMs) and empirical Bayes theory, which aims to (1) improve the accuracy and reliability of parameter estimation, compared to the maximum likelihood-based method for NB-GLM and Poisson-GLM; (2) effectively capture the over-dispersion nature of spike counts from both simulated data and experimental data; and (3) provide insight into both neural interactions and spiking behaviours of the neuronal populations. We apply our approach to study both simulated data and experimental neural data. The estimation of simulation data indicates that the new framework can accurately predict mean spike counts simulated from different models and recover the connectivity weights among neural populations. The estimation based on retinal neurons demonstrate the proposed method outperforms both NB-GLM and Poisson-GLM in terms of the predictive log-likelihood of held-out data.},
+  arxiv        = {1605.02869},
+  code         = {https://github.com/cuckoong/EB_spikes_trains},
+  doi          = {10.1109/TSP.2021.3076885},
+  pdf          = {2021_TSP.pdf},
 }
 
 @Article{Gao2016,
@@ -561,14 +564,18 @@ variability has remained at a relatively constant low level, which is expected, 
   url       = {https://ieeexplore.ieee.org/document/9306340},
 }
 
-@Electronic{Jelfs2021,
-  author       = {B. Jelfs and S. Sun and K. Ghorbani and C. Gilliam},
-  howpublished = {IEEE Signal Processing Letters (early access)},
-  title        = {An Adaptive All-Pass Filter for Time-Varying Delay Estimation},
-  abstract     = {The focus of this paper is the estimation of a delay between two signals. Such a problem is common in signal processing and particularly challenging when the delay is non-stationary in nature. Our proposed solution is based on an all-pass filter framework comprising of two elements: a time delay is equivalent to all-pass filtering and an all-pass filter can be represented in terms of a ratio of a finite impulse response (FIR) filter and its time reversal. Using these elements, we propose an adaptive filtering algorithm with an LMS style update that estimates the FIR filter coefficients and the time delay. Specifically, at each time step, the algorithm updates the filter coefficients based on a gradient descent update and then extracts an estimate of the time delay from the filter. We validate our algorithm on synthetic data demonstrating that it is both accurate and capable of tracking time-varying delays.},
-  arxiv        = {2101.02406},
-  doi          = {10.1109/LSP.2021.3065889},
-  pdf          = {2020_AAP.pdf},
+@Article{Jelfs2021,
+  author   = {B. Jelfs and S. Sun and K. Ghorbani and C. Gilliam},
+  journal  = {IEEE Signal Processing Letters},
+  title    = {An Adaptive All-Pass Filter for Time-Varying Delay Estimation},
+  year     = {2021},
+  pages    = {628--632},
+  volume   = {28},
+  abstract = {The focus of this paper is the estimation of a delay between two signals. Such a problem is common in signal processing and particularly challenging when the delay is non-stationary in nature. Our proposed solution is based on an all-pass filter framework comprising of two elements: a time delay is equivalent to all-pass filtering and an all-pass filter can be represented in terms of a ratio of a finite impulse response (FIR) filter and its time reversal. Using these elements, we propose an adaptive filtering algorithm with an LMS style update that estimates the FIR filter coefficients and the time delay. Specifically, at each time step, the algorithm updates the filter coefficients based on a gradient descent update and then extracts an estimate of the time delay from the filter. We validate our algorithm on synthetic data demonstrating that it is both accurate and capable of tracking time-varying delays.},
+  arxiv    = {2101.02406},
+  code     = {https://github.com/beteje/LAP_DelayEstimation},
+  doi      = {10.1109/LSP.2021.3065889},
+  pdf      = {2020_AAP.pdf},
 }
 
 @Article{Wang2021,
