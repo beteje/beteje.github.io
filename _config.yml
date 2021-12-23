@@ -15,7 +15,6 @@ keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your 
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.ico  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-
 url:  # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
@@ -51,7 +50,12 @@ footer_fixed: true
 # Dimensions
 max_width: 1000px
 
-# TODO: add layout settings (single page vs. multi-page)
+# -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
+
+navbar_fixed: true
+footer_fixed: true
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
