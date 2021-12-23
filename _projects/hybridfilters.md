@@ -2,7 +2,7 @@
 layout: page
 title: Collaborative Adaptive Filters
 description: Convex combinations of adaptive filters
-img: /assets/img/HybridFilter.png
+img: assets/img/HybridFilter.png
 importance: 3
 ---
 
@@ -141,7 +141,7 @@ Alternating high (turbulent) sea state and low (calm) sea state we can see that 
 ---
 
 ### Code
-Hybrid filter code can be found here: [hybrid-filters](https://github.com/beteje/hybrid-filters){:target="_blank"}      
+Hybrid filter code can be found here: [hybrid-filters](https://github.com/beteje/hybrid-filters){:target="_blank" rel="noopener"}      
 This code contains several example filters and benchmark signals and can be customised to include any adaptive filter of your choosing.
 
 ---

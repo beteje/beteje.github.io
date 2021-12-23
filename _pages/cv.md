@@ -9,7 +9,7 @@ social: true
 
 <div class="row" style="margin-top:-6.5em; margin-bottom:2em; padding: 5px">
 	<a class="ml-auto mr-2" href="/assets/pdf/cv.pdf" target="_blank">
-	  <img height="60px" src="/assets/img/pdf_icon.svg">
+	  <img height="60px" src="/assets/img/pdf_icon.svg" alt="CV pdf">
 	</a>
 </div>
 

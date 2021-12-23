@@ -2,7 +2,7 @@
 layout: page
 title: 3D Orientation Estimation
 description: Image gradients and directional statistics for determining fibre alignment
-img: /assets/img/range_orig213.png
+img: assets/img/range_orig213.png
 importance: 1
 ---
 
@@ -114,7 +114,7 @@ This method is efficient to computer, can perform the per voxel polar axis estim
   <div class="col-sm-5 mt-3 mt-md-0"><img class="img-fluid rounded z-depth-1 p-2" src="{{ '/assets/img/scaffold3.gif' | relative_url }}" alt="" title="Aligned Scaffold Data"/></div>
 </div>
 <div class="caption text-right">
-    Estimated fibres from real fibrous scaffold data (datasets available <a href="https://figshare.com/articles/Quanfima_Datasets/7096208" target="_blank">here</a>). Left: Random structures. Middle: Colour key for the different angles. Right: Aligned structures.
+    Estimated fibres from real fibrous scaffold data (<a href="https://figshare.com/articles/Quanfima_Datasets/7096208" target="_blank" rel="noopener">datasets available here</a>). Left: Random structures. Middle: Colour key for the different angles. Right: Aligned structures.
 </div>
 
 ---
@@ -145,7 +145,7 @@ To assess the distribution of the local orientation angles across the whole volu
 ---
 
 ### Code
-Orientation estimation code can be found here: [Orientation](https://github.com/beteje/Orientation){:target="_blank"}  
+Orientation estimation code can be found here: [Orientation](https://github.com/beteje/Orientation){:target="_blank" rel="noopener"}  
 
 ---
 

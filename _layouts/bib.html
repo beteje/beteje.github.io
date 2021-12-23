@@ -66,13 +66,13 @@
         <a class="abstract btn btn-sm z-depth-0 mr-0" role="button">abstract</a>
       {% endif %}
       {% if entry.doi %}
-        <a href="http://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">doi</a>
+        <a href="http://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">doi</a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">arXiv</a>
+        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">arXiv</a>
       {% endif %}
       {% if entry.url %}
-        <a href="{{ entry.url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">html</a>
+        <a href="{{ entry.url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">html</a>
       {% endif %}
       {% if entry.pdf %}
         <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">pdf</a>
@@ -87,7 +87,7 @@
         <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">slides</a>
       {% endif %}
       {% if entry.code %}
-        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">code</a>
+        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">code</a>
       {% endif %}
     </div>
 

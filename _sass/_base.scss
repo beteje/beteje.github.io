@@ -445,8 +445,8 @@ table.project-table {
       }
       .links {
         a.btn {
-          background-color: var(--global-theme-color);
-          color: $grey-color-light;
+          background-color: $light-cyan-color;
+          color: $grey-color-dark;
           border-radius: 8px;
           padding: 8px;
           &:hover {

@@ -2,7 +2,7 @@
 layout: page
 title: LFP Analysis
 description: A toolbox for analysis of local field potentials
-img: /assets/img/PhaseLocked.jpg
+img: assets/img/PhaseLocked.jpg
 importance: 2
 ---
 
@@ -74,8 +74,8 @@ To ensure the significance of the results a bootstrap procedure is used, shiftin
 ---
 
 ### Code
-The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank"}   
-The phase locking and spike field coherence code is based on the methods described by [Rutishauser et al.](http://doi.org/10.1038/nature08860){:target="_blank"}.
+The Matlab code for the toolbox can be found here: [LFP_Analysis](https://github.com/beteje/LFP_Analysis){:target="_blank" rel="noopener"}   
+The phase locking and spike field coherence code is based on the methods described by [Rutishauser et al.](http://doi.org/10.1038/nature08860){:target="_blank" rel="noopener"}.
 
 ---
 

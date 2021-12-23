@@ -2,7 +2,7 @@
 layout: page
 title: Finger Coordination
 description: The neural basis of finger coordination
-img: /assets/img/Fingers.jpg
+img: assets/img/Fingers.jpg
 importance: 2
 ---
 
@@ -82,7 +82,7 @@ To deal with the complexity of the neuromuscular system and extend beyond the va
 ---
 
 ### Code
-Fuzzy entropy NMF code can be found here: [Entropy_NMF](https://github.com/beteje/Entropy_NMF){:target="_blank"}
+Fuzzy entropy NMF code can be found here: [Entropy_NMF](https://github.com/beteje/Entropy_NMF){:target="_blank" rel="noopener"}
 
 ---
 
