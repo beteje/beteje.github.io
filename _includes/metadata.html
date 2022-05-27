@@ -1,6 +1,6 @@
 {% if site.enable_google_verification or site.enable_bing_verification %}
-    <!-- Website verification -->
-    {% if site.enable_google_verification -%}
+  <!-- Website verification -->
+  {% if site.enable_google_verification -%}
     <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
     {%- endif -%}
     {% if site.enable_bing_verification -%}
@@ -57,14 +57,14 @@
     <meta property="og:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
     {% if page.og_image or site.og_image -%}
     <meta property="og:image" content="{%- if page.og_image -%}{{ page.og_image }}{%- else -%}{{ site.og_image }}{%- endif -%}" />
-    {%- endif %}
-    <meta property="og:locale" content="{{ site.lang }}" />
+  {% endif %}
+  <meta property="og:locale" content="{{ site.lang }}" />
 
-    <!-- Twitter card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ title }}{%- endif -%}" />
-    <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
-    {% if page.og_image or site.og_image -%}
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ title }}{%- endif -%}" />
+  <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
+  {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{%- if page.og_image -%}{{ page.og_image }}{%- else -%}{{ site.og_image }}{%- endif -%}" />
     {%- endif %}
     {% if site.x_username -%}
@@ -74,7 +74,6 @@
 {%- endif %}
 
 {%- if site.serve_schema_org %}
-
     <!-- Schema.org -->
     {%- comment -%} Social links generator for "sameAs schema" {%- endcomment %}
     {% assign sameaslinks = "" | split: "," %}

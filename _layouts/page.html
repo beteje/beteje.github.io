@@ -21,7 +21,17 @@ layout: default
   </div>
   {%- endif %}
 
-  {%- if site.giscus and page.giscus_comments -%}
-    {% include giscus.html %}
-  {%- endif -%}
+  {% if page.social %}
+    <!-- Social -->
+    <div class="social">
+      <div class="contact-icons">
+        {% include social.html %}
+      </div>
+
+      <div class="contact-note">
+        {{ site.contact_note }}
+      </div>
+    </div>
+  {% endif %}
+
 </div>

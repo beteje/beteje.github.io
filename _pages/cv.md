@@ -2,14 +2,15 @@
 layout: page
 permalink: /cv/
 title: CV
-description: A little bit more about myself, my full cv can be found <a href="../assets/pdf/cv.pdf" target="_blank" style="color:#2698BA;">here</a>
+description: A little bit more about myself
 nav: true
+nav_order: 3
 social: true
 ---
 
 <div class="row" style="margin-top:-6.5em; margin-bottom:2em; padding: 5px">
 	<a class="ml-auto mr-2" href="/assets/pdf/cv.pdf" target="_blank">
-	  <img height="60px" src="/assets/img/pdf_icon.svg">
+	  <img height="60px" src="/assets/img/pdf_icon.svg" alt="CV pdf">
 	</a>
 </div>
 

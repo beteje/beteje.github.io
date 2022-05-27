@@ -1,47 +1,44 @@
+<header>
 
-    <header>
-
-      <!-- Nav Bar -->
-      <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
-        <div class="container">
-          {% if page.permalink != '/' -%}
-          <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-            {%- if site.title == "blank" -%}
-              {%- if site.first_name -%}
-                <span class="font-weight-bold">{{- site.first_name -}}&nbsp;</span>
-              {%- endif -%}
-              {%- if site.middle_name -%}
-                {{- site.middle_name -}}&nbsp;
-              {%- endif -%}
-              {%- if site.last_name -%}
-                {{- site.last_name -}}
-              {%- endif -%}
-            {%- else -%}
-              {{- site.title -}}
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+    <div class="container">
+      {% if page.permalink != "/" %}
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+          {%- if site.title == "blank" -%}
+            {%- if site.first_name -%}
+              <span class="font-weight-bold">{{- site.first_name -}}&nbsp;</span>
             {%- endif -%}
-          </a>
-          {%- elsif site.enable_navbar_social -%}
-          <!-- Social Icons -->
-          <div class="navbar-brand social">
-            {% include social.html %}
-          </div>
-          {% endif %}
-          <!-- Navbar Toggle -->
-          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar top-bar"></span>
-            <span class="icon-bar middle-bar"></span>
-            <span class="icon-bar bottom-bar"></span>
-          </button>
-
-          <div class="collapse navbar-collapse text-right" id="navbarNav">
-            <ul class="navbar-nav ml-auto flex-nowrap">
-
-              {%- for page in site.pages -%}
-                {% if page.permalink == '/' %}
-                  {% assign about_title = page.title %}
-                {% endif %}
-              {% endfor %}
+            {%- if site.middle_name -%}
+              {{- site.middle_name -}}&nbsp;
+            {%- endif -%}
+            {%- if site.last_name -%}
+              {{- site.last_name -}}
+            {%- endif -%}
+          {%- else -%}
+            {{- site.title -}}
+          {%- endif -%}
+        </a>
+      {% elsif site.enable_navbar_social %}
+        <!-- Social Icons -->
+        <div class="navbar-brand social">
+          {% include social.html %}
+        </div>
+      {% endif %}
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          {% for page in site.pages %}
+            {% if page.permalink == '/' %}
+              {% assign about_title = page.title %}
+            {% endif %}
+          {% endfor %}
 
               <!-- About -->
               <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
@@ -51,6 +48,17 @@
                   {%- endif -%}
                 </a>
               </li>
+
+              {% if site.blog_name %}
+                <!-- Blog -->
+                <li class="nav-item {% if page.url contains 'news' %}active{% endif %}">
+                  <a class="nav-link" href="{{ '/news/' | relative_url }}">{{ site.blog_nav_title }}
+                    {% if page.url contains 'news' %}
+                      <span class="sr-only">(current)</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
 
               <!-- Other pages -->
               {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
@@ -82,10 +90,11 @@
             {%- else %}
               <li class="nav-item {% if p.title == 'Research' and page.url contains 'research' %}active{% elsif page.title == p.title %}active{% endif %}">
                 <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
-                    {% if page.title == p.title %}
+                    {%- if page.title == p.title -%}
                       <span class="sr-only">(current)</span>
-                    {% endif %}
+                    {%- endif -%}
                   </a>
+
                 </li>
               {% endif %}
             {% endif %}
