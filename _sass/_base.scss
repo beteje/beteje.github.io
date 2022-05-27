@@ -10,6 +10,7 @@ p, h1, h2, h5, h6, em, div, li, span, strong {
 
 h3, h4 {
   color: var(--global-theme-color);
+}
 
 hr {
   border-top: 1px solid var(--global-divider-color);
@@ -37,6 +38,7 @@ a, table.table a {
 
 figure, img {
   max-width: 90vw;
+  margin: 0;
 }
 
 blockquote {
@@ -58,8 +60,8 @@ blockquote {
 
 .caption {
   font-size: 0.875rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
@@ -118,19 +120,6 @@ blockquote {
     }
   }
 }
-
-.post-description {
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--global-theme-color);
-  a {
-    color: var(--global-theme-color);
-    &:hover {
-      color: var(--global-hover-color);
-      text-decoration: none;
-    }
-  }
-}
-
 
 // Navbar customization
 
@@ -241,6 +230,11 @@ blockquote {
 
 .news table td {
   font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+.news table th {
+  color: var(--global-text-color);
 }
 
 
@@ -252,7 +246,7 @@ blockquote {
     font-size: 4rem;
     a {
       i::before {
-        color: var(--global-text-color);
+        color: var(--global-theme-color);
         transition-property: all 0.2s ease-in-out;
       }
       &:hover {
@@ -311,22 +305,6 @@ footer.sticky-bottom {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-  border-bottom: 1px solid $grey-color-light;
-  list-style: none;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  .post-meta {
-    color: $grey-color-light;
-    font-size: 0.875rem;
-    margin-bottom: 0;
-  }
-  a {
-    color: var(--global-text-color);
-    text-decoration: none;
-    &:hover {
-      color: var(--global-theme-color);
-    }
-  }
   li {
     border-bottom: 1px solid var(--global-divider-color);
     list-style: none;
@@ -336,12 +314,6 @@ footer.sticky-bottom {
       color: var(--global-text-color-light);
       font-size: 0.875rem;
       margin-bottom: 0;
-    }
-    .post-tags {
-      color: var(--global-text-color-light);
-      font-size: 0.875rem;
-      padding-top: 0.25rem;
-      padding-bottom: 0;
     }
     a {
       color: var(--global-text-color);
@@ -378,9 +350,11 @@ footer.sticky-bottom {
   a {
     text-decoration: none;
 
-    &:hover {
+
       .card-title {
         color: var(--global-theme-color);
+        &:hover {
+          color: var(--global-hover-color);
       }
     }
   }
@@ -402,7 +376,7 @@ footer.sticky-bottom {
   }
 
   .grid-sizer, .grid-item {
-    width: 250px;
+    width: 316px;
     margin-bottom: 10px;
   }
 
@@ -415,11 +389,12 @@ footer.sticky-bottom {
     text-align: right;
   }
   .table th {
-    background-color: $theme-color;
+    background-color: var(--global-theme-color);
   }
 }
 
 table.project-table {
+  margin: auto;
   th {
     color: $cyan-color;
     background-color: white;
@@ -448,40 +423,56 @@ table.project-table {
 
 .publications {
   margin-top: 2rem;
-  h2.year {
-    color: var(--global-divider-color);
+  .card {
+    border: 0;
+    font-weight: lighter;
+  }
+  .card-header {
     border-top: 1px solid var(--global-divider-color);
+    border-bottom: 0;
     padding-top: 1rem;
     margin-top: 2rem;
-    margin-bottom: -2rem;
-    text-align: right;
-    &:hover {
+    margin-bottom: -1rem;
+    background-color: var(--global-card-bg-color);
+    a {
+      text-align: right;
       color: var(--global-theme-color);
+      &:hover {
+        color: var(--global-hover-color);
+      }
+    }
+    .fa-chevron:after {
+      content: "\f078";
+    }
+    .collapsed .fa-chevron:after {
+        content: "\f054";
+    }
+  }
+  .card-body{
+    h2 {
+      font-weight: lighter;
     }
   }
   .btn-expand {
-    background-color: $light-cyan-color; //var(--global-theme-color);
+    background-color: $light-cyan-color;
     color: $grey-color-dark;
     border-radius: 10px;
     &:hover {
       color: var(--global-hover-color);
     }
   }
-  .panel-heading .fa-chevron:after {
-    content: "\f078";
-  }
-  .panel-heading.collapsed .fa-chevron:after {
-      content: "\f054";
-  }
   ol.bibliography {
     list-style: none;
     padding: 0;
     margin-top: 0;
-
     li {
       margin: 1rem 2rem;
+      .award {
+        color: var(--global-theme-color) !important;
+        border: 1px solid var(--global-theme-color);
+      }
       .title {
-        font-weight: bolder;
+        font-weight: normal;
       }
       .author {
         > em {
@@ -491,7 +482,7 @@ table.project-table {
       }
       .links {
         a.btn {
-          background-color: $light-cyan-color;//var(--global-theme-color);
+          background-color: $light-cyan-color;
           color: $grey-color-dark;
           border-radius: 8px;
           padding: 8px;
@@ -560,8 +551,8 @@ table.project-table {
       }
       .links {
         a.btn {
-          background-color: var(--global-theme-color);
-          color: $grey-color-light;
+          background-color: $light-cyan-color;
+          color: $grey-color-dark;
           border-radius: 8px;
           padding: 8px;
           &:hover {
@@ -666,6 +657,20 @@ html.transition *:after {
     blockquote {
       border-left: 5px solid var(--global-theme-color);
       padding: 8px;
+    }
+  }
+  .post-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--global-theme-color);
+    p {
+      margin-bottom: 0px;
+    }
+    a {
+      color: var(--global-theme-color);
+      &:hover {
+        color: var(--global-hover-color);
+        text-decoration: none;
+      }
     }
   }
 }
