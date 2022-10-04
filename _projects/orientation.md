@@ -3,7 +3,7 @@ layout: page
 title: 3D Orientation Estimation
 description: Image gradients and directional statistics for determining fibre alignment
 img: assets/img/range_orig213.png
-importance: 1
+importance: 2
 ---
 
 We have developed an efficient, parallelisable computational method to determine 3D orientations at a local level. Quantifying the orientation and alignment of cells and fibres in 3D is of growing interest. Tissue function is affected by this alignment and with increases in the development and use of 3D scaffolds in bioengineering there is a need to be able determine their performance.
