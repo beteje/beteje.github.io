@@ -213,7 +213,12 @@ imagemagick:
 # Jekyll Diagrams
 # -----------------------------------------------------------------------------
 
-# jekyll-diagrams:
+jekyll-diagrams:
+  mermaid:
+    width: 100
+    height: 100
+    theme: neutral
+ }
     # configuration, see https://github.com/zhustec/jekyll-diagrams.
     # feel free to comment out this section if not using jekyll diagrams.
 

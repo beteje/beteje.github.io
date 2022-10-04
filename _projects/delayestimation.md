@@ -3,7 +3,7 @@ layout: page
 title: Delay Estimation
 description: Local all-pass filter framework
 img: /assets/img/sEMG_Signals_L.png
-importance: 1
+importance: 2
 ---
 
 Estimation of delays between two or more spatially separated sensors is necessary in many applications especially those involving speed or time of flight measurements.

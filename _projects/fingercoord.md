@@ -3,7 +3,7 @@ layout: page
 title: Finger Coordination
 description: The neural basis of finger coordination
 img: assets/img/Fingers.jpg
-importance: 2
+importance: 3
 ---
 
 Actions involving the hand require positioning multiple fingers each with multiple degrees of freedom. However, we regularly perform complex actions without the need to consciously consider the position of each and every joint. Understanding the neural basis of finger coordination has many uses in rehabilitation and prosthetics.

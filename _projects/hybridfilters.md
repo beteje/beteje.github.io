@@ -3,7 +3,7 @@ layout: page
 title: Collaborative Adaptive Filters
 description: Convex combinations of adaptive filters
 img: assets/img/HybridFilter.png
-importance: 3
+importance: 4
 ---
 
 <div class="row align-items-center">

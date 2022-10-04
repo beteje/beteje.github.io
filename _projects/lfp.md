@@ -3,7 +3,7 @@ layout: page
 title: LFP Analysis
 description: A toolbox for analysis of local field potentials
 img: assets/img/PhaseLocked.jpg
-importance: 2
+importance: 3
 ---
 
 This toolbox performs several different analyses on the local field potentials (LFP) generated from multichannel recording electrodes. After performing spike sorting the LFP of a channel can be acquired by low-pass filtering the recorded data. This then allows the relationship between the LFP and neural spiking to be investigated.
