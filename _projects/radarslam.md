@@ -203,6 +203,21 @@ importance: 1
 
 ---
 
+### Extended Targets
+
+<div class="row align-items-top justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-1">
+    Current work {% cite Sun2022a %} is looking at how to produce a more precise map, in order to better facilitate navigation and path planning.<br/><br/>
+
+    To do this we are using an ellipse model to generate extended landmarks and investigating how to take advantage of the landmark extent estimation in the update of the EKF-SLAM.
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    {% include figure.html path="assets/img/Landmark_Extent.png" title="Landmark Extent Estimation" caption="Example of landmark extent estimation." zoomable=true class="img-fluid rounded z-depth-1 p-2" %}
+  </div>
+</div>
+
+---
+
 ### Code
 Orientation estimation code can be found here: [SLAM Landmark Management](https://github.com/shuai000/SLAM_LandmarkManagement){:target="_blank" rel="noopener"}
 
