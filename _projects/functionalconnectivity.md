@@ -23,12 +23,23 @@ Current projects include longitudinal studies related to stroke patients and coc
   <div class="col-sm-4 mt-3 mt-md-0">
     Our review of current literature {% cite Wu2022 %} shows there is clear evidence that the functional network in the brain changes following a stroke and continuously adapts as part of the recovery process. Despite this there has been little work done related to dynamic functional connectivity in stroke patients.<br/><br/>
 
-    Our current work is investigating the longitudinal trends in dynamic functional connectivity of stroke patients. The first step in this has been to understand how dynamic functional connectivity changes in the normal course of aging {% cite Wu2023 %}. <br/><br/>
-
-    Next we will be looking at changes in the modularity, integration and flexibility of the functional brain network after stroke.
+    Our current work is investigating the longitudinal trends in dynamic functional connectivity of stroke patients. The first step in this has been to understand how dynamic functional connectivity changes in the normal course of aging {% cite Wu2023 %}.
   </div>
   <div class="col-sm-8 mt-3 mt-md-0">
     {% include figure.html path="/assets/img/DFCPipeline.jpg" alt="" title="Dynamic Functional Connectivity Pipeline" caption="Dynamic functional connectivity analysis pipeline." zoomable=true class="img-fluid rounded z-depth-1 p-2" %}
+  </div>
+</div>
+
+Next we have looked at the reconfiguration of the functional brain network after stroke.
+
+<div class="row align-items-center">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.html path="/assets/img/Multilayer.png" alt="" title="Multilayer Dynamics Analysis Framework" caption="Multilayer dynamics analysis framework." zoomable=true class="img-fluid rounded z-depth-1 p-2" %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    Investigating the changes in the recruitment, integration and flexibility there were clear differences depending on the severity of the stroke {% cite Wu2023a %}.<br/><br/>
+
+    {% include figure.html path="/assets/img/reconfiguration_summary.png" alt="" title="Summary of Reconfiguration Patterns of Stroke Patients" caption="Summary of the reconfiguration patterns of stroke patients (A) Mild (B) Severe." zoomable=true class="img-fluid rounded z-depth-1 p-2" %}
   </div>
 </div>
 
