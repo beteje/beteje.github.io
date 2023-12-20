@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    Beth  Jelfs | Radar SLAM
+  
+</title>
+<meta name="author" content="Beth  Jelfs" />
+<meta name="description" content="Landmark management for radar SLAM" />
+
+  <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+      <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://beteje.github.io/research/radarslam/">
+
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header --><header>
+
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="https://beteje.github.io/">
+          <span class="font-weight-bold">Beth</span>   Jelfs
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+          
+            <!-- Blog -->
+            <li class="nav-item ">
+              <a class="nav-link" href="/news/">News
+                
+              </a>
+            </li>
+          
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li class="nav-item active">
+                  <a class="nav-link" href="/research/">Research</a>
+                </li>
+              
+            
+          
+            
+              
+                <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">Publications</a>
+                </li>
+              
+            
+          
+            
+              
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV</a>
+                </li>
+              
+            
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- page.html -->
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Radar SLAM</h1>
+    <p class="post-description">Landmark management for radar SLAM</p>
+  </header>
+
+  <article>
+    <div class="row align-items-top justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-0">
+    The aim of this project is to investigate the use of rotating synthetic aperture radar (RoSAR) in simultaneous localization and mapping (SLAM).<br><br>
+
+    <div class="col-md-8 mt-3 mt-md-1 offset-sm-2">
+      
+
+<figure>
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/observation-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/observation-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/observation-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1 p-2" src="/assets/img/observation.png" title="Typical SLAM Scene" data-zoomable="">
+  </picture>
+
+  <figcaption class="caption">Typical SLAM Scene.</figcaption>
+</figure>
+
+    </div>
+<br><br>
+
+    The first stage of this project has focused on developing a landmark management scheme <a class="citation" href="#Sun2022">[1]</a> taking account of the following:<br><br>
+
+    <ul>
+      <li>Landmarks contain multiple scattering/reflecting points</li>
+      <li>The angle between the landmark and the platform the sensor is mounted on, changes with the movement of the platform, resulting in varying numbers of radar detections over time</li>
+      <li>Clutter in the scene may result in false detections</li>
+    </ul>
+
+    At each time step the radar measurements are sifted, the selected measurements which are within a pre-defined distance of the existing landmarks are used for measurement association and to update the state.<br><br>
+
+    Measurements which are not selected are used to determine if there are any new landmarks.<br><br>
+
+    To determine whether an existing landmark should be deleted or an unconfirmed landmark should be confirmed we use M/N logic - if a landmark has been observed M times in the last N timesteps it is confirmed/deleted.
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074659479" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 478.4765625px;" viewbox="0 0 478.4765625 907.0640563964844"><style>#mermaid-1703074659479 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074659479 .node circle,#mermaid-1703074659479 .node ellipse,#mermaid-1703074659479 .node polygon,#mermaid-1703074659479 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074659479 .node.clickable{cursor:pointer}#mermaid-1703074659479 .arrowheadPath{fill:#333}#mermaid-1703074659479 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074659479 .edgeLabel{background-color:#fff}#mermaid-1703074659479 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074659479 .cluster text{fill:#333}#mermaid-1703074659479 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074659479 .actor{stroke:#999;fill:#eee}#mermaid-1703074659479 text.actor{fill:#333;stroke:none}#mermaid-1703074659479 .actor-line{stroke:#666}#mermaid-1703074659479 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074659479 .messageLine0,#mermaid-1703074659479 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074659479 #arrowhead{fill:#333}#mermaid-1703074659479 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074659479 .messageText{fill:#333;stroke:none}#mermaid-1703074659479 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074659479 .labelText,#mermaid-1703074659479 .loopText{fill:#fff;stroke:none}#mermaid-1703074659479 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074659479 .note{stroke:#770;fill:#ffa}#mermaid-1703074659479 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074659479 .section{stroke:none;opacity:.2}#mermaid-1703074659479 .section0,#mermaid-1703074659479 .section2{fill:#80b3e6}#mermaid-1703074659479 .section1,#mermaid-1703074659479 .section3{fill:#fff;opacity:.2}#mermaid-1703074659479 .sectionTitle0,#mermaid-1703074659479 .sectionTitle1,#mermaid-1703074659479 .sectionTitle2,#mermaid-1703074659479 .sectionTitle3{fill:#333}#mermaid-1703074659479 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074659479 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074659479 .grid path{stroke-width:0}#mermaid-1703074659479 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074659479 .task{stroke-width:2}#mermaid-1703074659479 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074659479 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074659479 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074659479 .taskText0,#mermaid-1703074659479 .taskText1,#mermaid-1703074659479 .taskText2,#mermaid-1703074659479 .taskText3{fill:#fff}#mermaid-1703074659479 .task0,#mermaid-1703074659479 .task1,#mermaid-1703074659479 .task2,#mermaid-1703074659479 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074659479 .taskTextOutside0,#mermaid-1703074659479 .taskTextOutside1,#mermaid-1703074659479 .taskTextOutside2,#mermaid-1703074659479 .taskTextOutside3{fill:#333}#mermaid-1703074659479 .active0,#mermaid-1703074659479 .active1,#mermaid-1703074659479 .active2,#mermaid-1703074659479 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074659479 .activeText0,#mermaid-1703074659479 .activeText1,#mermaid-1703074659479 .activeText2,#mermaid-1703074659479 .activeText3{fill:#333!important}#mermaid-1703074659479 .done0,#mermaid-1703074659479 .done1,#mermaid-1703074659479 .done2,#mermaid-1703074659479 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074659479 .doneText0,#mermaid-1703074659479 .doneText1,#mermaid-1703074659479 .doneText2,#mermaid-1703074659479 .doneText3{fill:#333!important}#mermaid-1703074659479 .crit0,#mermaid-1703074659479 .crit1,#mermaid-1703074659479 .crit2,#mermaid-1703074659479 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074659479 .activeCrit0,#mermaid-1703074659479 .activeCrit1,#mermaid-1703074659479 .activeCrit2,#mermaid-1703074659479 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074659479 .doneCrit0,#mermaid-1703074659479 .doneCrit1,#mermaid-1703074659479 .doneCrit2,#mermaid-1703074659479 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074659479 .activeCritText0,#mermaid-1703074659479 .activeCritText1,#mermaid-1703074659479 .activeCritText2,#mermaid-1703074659479 .activeCritText3,#mermaid-1703074659479 .doneCritText0,#mermaid-1703074659479 .doneCritText1,#mermaid-1703074659479 .doneCritText2,#mermaid-1703074659479 .doneCritText3{fill:#333!important}#mermaid-1703074659479 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074659479 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074659479 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074659479 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074659479 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074659479 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074659479 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074659479 #compositionEnd,#mermaid-1703074659479 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074659479 #aggregationEnd,#mermaid-1703074659479 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074659479 #dependencyEnd,#mermaid-1703074659479 #dependencyStart,#mermaid-1703074659479 #extensionEnd,#mermaid-1703074659479 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074659479 .branch-label,#mermaid-1703074659479 .commit-id,#mermaid-1703074659479 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074659479 .myGraph &gt; * { fill:#c7e9f3 !important; }
+#mermaid-1703074659479 .highlight &gt; * { fill:#9cd9eb !important; stroke:#f92080 !important; stroke-width:1px !important; }</style>
+<style>#mermaid-1703074659479 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M306.26171875,58L306.26171875,83L306.26171875,108" marker-end="url(#arrowhead63)" style="fill:none"></path><defs><marker id="arrowhead63" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M274.75417258522725,146L233.296875,171L233.296875,196" marker-end="url(#arrowhead64)" style="fill:none"></path><defs><marker id="arrowhead64" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M233.296875,237L233.296875,262L233.296875,287" marker-end="url(#arrowhead65)" style="fill:none"></path><defs><marker id="arrowhead65" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M233.296875,343L233.296875,368L233.796875,393.5000030517578" marker-end="url(#arrowhead66)" style="fill:none"></path><defs><marker id="arrowhead66" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M195.87103025212295,503.6382147003651L119.8203125,575.0640563964844L119.8203125,628.0640563964844L119.8203125,672.0640563964844L119.8203125,697.0640563964844" marker-end="url(#arrowhead67)" style="fill:none"></path><defs><marker id="arrowhead67" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M271.72272287464506,503.6382176771128L346.7734375,575.0640563964844L346.7734375,609.0640563964844" marker-end="url(#arrowhead68)" style="fill:none"></path><defs><marker id="arrowhead68" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M119.8203125,735.0640563964844L119.8203125,760.0640563964844L119.8203125,785.0640563964844" marker-end="url(#arrowhead69)" style="fill:none"></path><defs><marker id="arrowhead69" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M346.7734375,647.0640563964844L346.7734375,672.0640563964844L346.7734375,697.0640563964844" marker-end="url(#arrowhead70)" style="fill:none"></path><defs><marker id="arrowhead70" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M346.7734375,735.0640563964844L346.7734375,760.0640563964844L346.7734375,785.0640563964844" marker-end="url(#arrowhead71)" style="fill:none"></path><defs><marker id="arrowhead71" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M119.8203125,823.0640563964844L119.8203125,848.0640563964844L306.0859375,884.1758636254" marker-end="url(#arrowhead72)" style="fill:none"></path><defs><marker id="arrowhead72" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M346.7734375,823.0640563964844L346.7734375,848.0640563964844L346.7734375,873.0640563964844" marker-end="url(#arrowhead73)" style="fill:none"></path><defs><marker id="arrowhead73" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M387.4609375,878.8716557056381L482.4765625,848.0640563964844L482.4765625,804.0640563964844L482.4765625,760.0640563964844L482.4765625,716.0640563964844L482.4765625,672.0640563964844L482.4765625,628.0640563964844L482.4765625,575.0640563964844L482.4765625,467.0320281982422L482.4765625,368L482.4765625,315L482.4765625,262L482.4765625,216.5L482.4765625,171L369.62109375,142.82053157766398" marker-end="url(#arrowhead74)" style="fill:none"></path><defs><marker id="arrowhead74" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(119.8203125,628.0640563964844)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(346.7734375,575.0640563964844)"><g transform="translate(-9.78125,-9)" class="label"><foreignobject width="19.5625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">No</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="A" transform="translate(306.26171875,39)" style="opacity: 1;"><rect rx="5" ry="5" x="-27.5703125" y="-19" width="55.140625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-17.5703125,-9)"><foreignobject width="35.140625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">k = 1</div></foreignobject></g></g></g><g class="node myGraph" id="B" transform="translate(306.26171875,127)" style="opacity: 1;"><rect rx="5" ry="5" x="-63.359375" y="-19" width="126.71875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-53.359375,-9)"><foreignobject width="106.71875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">EKF Prediction</div></foreignobject></g></g></g><g class="node myGraph" id="C" transform="translate(233.296875,216.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-109.375" y="-20.5" width="218.75" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-99.375,-10.5)"><foreignobject width="198.75" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Get radar measurements Z<sub>k</sub>
+</div></foreignobject></g></g></g><g class="node myGraph" id="S1" transform="translate(233.296875,315)" style="opacity: 1;"><rect rx="5" ry="5" x="-110.9296875" y="-28" width="221.859375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-100.9296875,-18)"><foreignobject width="201.859375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Calculate distances<br>landmarks to measurements</div></foreignobject></g></g></g><g class="node myGraph" id="S2" transform="translate(233.296875,467.0320281982422)" style="opacity: 1;"><polygon points="74.03203125,0 148.0640625,-74.03203125 74.03203125,-148.0640625 0,-74.03203125" rx="5" ry="5" transform="translate(-74.03203125,74.03203125)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-44.2578125,-18)"><foreignobject width="88.515625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Distances<br>&lt; threshold?</div></foreignobject></g></g></g><g class="node highlight" id="G" transform="translate(119.8203125,716.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-99.8203125" y="-19" width="199.640625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-89.8203125,-9)"><foreignobject width="179.640625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Associate measurements</div></foreignobject></g></g></g><g class="node highlight" id="H" transform="translate(346.7734375,628.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-90.4765625" y="-19" width="180.953125" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-80.4765625,-9)"><foreignobject width="160.953125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cluster measurements</div></foreignobject></g></g></g><g class="node highlight" id="I" transform="translate(119.8203125,804.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-72.25" y="-19" width="144.5" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-62.25,-9)"><foreignobject width="124.5" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Delete landmarks</div></foreignobject></g></g></g><g class="node highlight" id="J" transform="translate(346.7734375,716.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-77.1328125" y="-19" width="154.265625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-67.1328125,-9)"><foreignobject width="134.265625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Confirm landmarks</div></foreignobject></g></g></g><g class="node highlight" id="K" transform="translate(346.7734375,804.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-71.8046875" y="-19" width="143.609375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.8046875,-9)"><foreignobject width="123.609375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Merge landmarks</div></foreignobject></g></g></g><g class="node myGraph" id="D" transform="translate(346.7734375,892.0640563964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-40.6875" y="-19" width="81.375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.6875,-9)"><foreignobject width="61.375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">k = k + 1</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+    <figcaption class="caption">Landmark management scheme, highlighted blocks are explained below.</figcaption>
+  </div>
+</div>
+
+<hr>
+
+<h3 id="measurement-association">Measurement Association</h3>
+
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074660028" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 917.6421813964844px;" viewbox="0 0 917.6421813964844 164.06405639648438"><style>#mermaid-1703074660028 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074660028 .node circle,#mermaid-1703074660028 .node ellipse,#mermaid-1703074660028 .node polygon,#mermaid-1703074660028 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074660028 .node.clickable{cursor:pointer}#mermaid-1703074660028 .arrowheadPath{fill:#333}#mermaid-1703074660028 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074660028 .edgeLabel{background-color:#fff}#mermaid-1703074660028 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074660028 .cluster text{fill:#333}#mermaid-1703074660028 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074660028 .actor{stroke:#999;fill:#eee}#mermaid-1703074660028 text.actor{fill:#333;stroke:none}#mermaid-1703074660028 .actor-line{stroke:#666}#mermaid-1703074660028 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074660028 .messageLine0,#mermaid-1703074660028 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074660028 #arrowhead{fill:#333}#mermaid-1703074660028 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074660028 .messageText{fill:#333;stroke:none}#mermaid-1703074660028 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074660028 .labelText,#mermaid-1703074660028 .loopText{fill:#fff;stroke:none}#mermaid-1703074660028 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074660028 .note{stroke:#770;fill:#ffa}#mermaid-1703074660028 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074660028 .section{stroke:none;opacity:.2}#mermaid-1703074660028 .section0,#mermaid-1703074660028 .section2{fill:#80b3e6}#mermaid-1703074660028 .section1,#mermaid-1703074660028 .section3{fill:#fff;opacity:.2}#mermaid-1703074660028 .sectionTitle0,#mermaid-1703074660028 .sectionTitle1,#mermaid-1703074660028 .sectionTitle2,#mermaid-1703074660028 .sectionTitle3{fill:#333}#mermaid-1703074660028 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074660028 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074660028 .grid path{stroke-width:0}#mermaid-1703074660028 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074660028 .task{stroke-width:2}#mermaid-1703074660028 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074660028 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074660028 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074660028 .taskText0,#mermaid-1703074660028 .taskText1,#mermaid-1703074660028 .taskText2,#mermaid-1703074660028 .taskText3{fill:#fff}#mermaid-1703074660028 .task0,#mermaid-1703074660028 .task1,#mermaid-1703074660028 .task2,#mermaid-1703074660028 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074660028 .taskTextOutside0,#mermaid-1703074660028 .taskTextOutside1,#mermaid-1703074660028 .taskTextOutside2,#mermaid-1703074660028 .taskTextOutside3{fill:#333}#mermaid-1703074660028 .active0,#mermaid-1703074660028 .active1,#mermaid-1703074660028 .active2,#mermaid-1703074660028 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074660028 .activeText0,#mermaid-1703074660028 .activeText1,#mermaid-1703074660028 .activeText2,#mermaid-1703074660028 .activeText3{fill:#333!important}#mermaid-1703074660028 .done0,#mermaid-1703074660028 .done1,#mermaid-1703074660028 .done2,#mermaid-1703074660028 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074660028 .doneText0,#mermaid-1703074660028 .doneText1,#mermaid-1703074660028 .doneText2,#mermaid-1703074660028 .doneText3{fill:#333!important}#mermaid-1703074660028 .crit0,#mermaid-1703074660028 .crit1,#mermaid-1703074660028 .crit2,#mermaid-1703074660028 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074660028 .activeCrit0,#mermaid-1703074660028 .activeCrit1,#mermaid-1703074660028 .activeCrit2,#mermaid-1703074660028 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074660028 .doneCrit0,#mermaid-1703074660028 .doneCrit1,#mermaid-1703074660028 .doneCrit2,#mermaid-1703074660028 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074660028 .activeCritText0,#mermaid-1703074660028 .activeCritText1,#mermaid-1703074660028 .activeCritText2,#mermaid-1703074660028 .activeCritText3,#mermaid-1703074660028 .doneCritText0,#mermaid-1703074660028 .doneCritText1,#mermaid-1703074660028 .doneCritText2,#mermaid-1703074660028 .doneCritText3{fill:#333!important}#mermaid-1703074660028 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074660028 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074660028 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074660028 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074660028 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074660028 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074660028 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074660028 #compositionEnd,#mermaid-1703074660028 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660028 #aggregationEnd,#mermaid-1703074660028 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074660028 #dependencyEnd,#mermaid-1703074660028 #dependencyStart,#mermaid-1703074660028 #extensionEnd,#mermaid-1703074660028 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660028 .branch-label,#mermaid-1703074660028 .commit-id,#mermaid-1703074660028 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074660028 .myGraph &gt; * { fill:#c7e9f3 !important; }</style>
+<style>#mermaid-1703074660028 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M269.453125,94.03202819824219L294.453125,94.03202819824219L319.453125,94.03202819824219" marker-end="url(#arrowhead18)" style="fill:none"></path><defs><marker id="arrowhead18" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M504,94.03202819824219L529,94.03202819824219L554.5000030517577,94.53202819824219" marker-end="url(#arrowhead19)" style="fill:none"></path><defs><marker id="arrowhead19" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M702.5640594482421,94.53202819824219L738.7046813964844,94.03202819824219L775.3453063964844,94.03202819824219" marker-end="url(#arrowhead20)" style="fill:none"></path><defs><marker id="arrowhead20" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(738.7046813964844,94.03202819824219)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="A1" transform="translate(144.7265625,94.03202819824219)" style="opacity: 1;"><rect rx="5" ry="5" x="-124.7265625" y="-19" width="249.453125" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-114.7265625,-9)"><foreignobject width="229.453125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">For each selected measurement</div></foreignobject></g></g></g><g class="node myGraph" id="A2" transform="translate(411.7265625,94.03202819824219)" style="opacity: 1;"><rect rx="5" ry="5" x="-92.2734375" y="-19" width="184.546875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-82.2734375,-9)"><foreignobject width="164.546875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Calculate log distances</div></foreignobject></g></g></g><g class="node myGraph" id="A3" transform="translate(628.0320281982422,94.03202819824219)" style="opacity: 1;"><polygon points="74.03203125,0 148.0640625,-74.03203125 74.03203125,-148.0640625 0,-74.03203125" rx="5" ry="5" transform="translate(-74.03203125,74.03203125)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-44.2578125,-18)"><foreignobject width="88.515625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">log distance<br> &lt; threshold?</div></foreignobject></g></g></g><g class="node myGraph" id="A4" transform="translate(848.4937438964844,94.03202819824219)" style="opacity: 1;"><rect rx="5" ry="5" x="-73.1484375" y="-19" width="146.296875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.1484375,-9)"><foreignobject width="126.296875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Update EKF state</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+    <figcaption class="caption">Measurement association procedure.</figcaption>
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    The first step is to check whether the selected measurements can be associated with existing landmarks based on a log distance measure.<br><br>
+
+    The associated measurements are used to update the EKF state.
+  </div>
+</div>
+
+<hr>
+
+<h3 id="landmark-deletion">Landmark Deletion</h3>
+
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074660429" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 1248.9828186035156px;" viewbox="0 0 1248.9828186035156 309.9664077758789"><style>#mermaid-1703074660429 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074660429 .node circle,#mermaid-1703074660429 .node ellipse,#mermaid-1703074660429 .node polygon,#mermaid-1703074660429 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074660429 .node.clickable{cursor:pointer}#mermaid-1703074660429 .arrowheadPath{fill:#333}#mermaid-1703074660429 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074660429 .edgeLabel{background-color:#fff}#mermaid-1703074660429 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074660429 .cluster text{fill:#333}#mermaid-1703074660429 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074660429 .actor{stroke:#999;fill:#eee}#mermaid-1703074660429 text.actor{fill:#333;stroke:none}#mermaid-1703074660429 .actor-line{stroke:#666}#mermaid-1703074660429 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074660429 .messageLine0,#mermaid-1703074660429 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074660429 #arrowhead{fill:#333}#mermaid-1703074660429 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074660429 .messageText{fill:#333;stroke:none}#mermaid-1703074660429 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074660429 .labelText,#mermaid-1703074660429 .loopText{fill:#fff;stroke:none}#mermaid-1703074660429 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074660429 .note{stroke:#770;fill:#ffa}#mermaid-1703074660429 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074660429 .section{stroke:none;opacity:.2}#mermaid-1703074660429 .section0,#mermaid-1703074660429 .section2{fill:#80b3e6}#mermaid-1703074660429 .section1,#mermaid-1703074660429 .section3{fill:#fff;opacity:.2}#mermaid-1703074660429 .sectionTitle0,#mermaid-1703074660429 .sectionTitle1,#mermaid-1703074660429 .sectionTitle2,#mermaid-1703074660429 .sectionTitle3{fill:#333}#mermaid-1703074660429 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074660429 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074660429 .grid path{stroke-width:0}#mermaid-1703074660429 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074660429 .task{stroke-width:2}#mermaid-1703074660429 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074660429 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074660429 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074660429 .taskText0,#mermaid-1703074660429 .taskText1,#mermaid-1703074660429 .taskText2,#mermaid-1703074660429 .taskText3{fill:#fff}#mermaid-1703074660429 .task0,#mermaid-1703074660429 .task1,#mermaid-1703074660429 .task2,#mermaid-1703074660429 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074660429 .taskTextOutside0,#mermaid-1703074660429 .taskTextOutside1,#mermaid-1703074660429 .taskTextOutside2,#mermaid-1703074660429 .taskTextOutside3{fill:#333}#mermaid-1703074660429 .active0,#mermaid-1703074660429 .active1,#mermaid-1703074660429 .active2,#mermaid-1703074660429 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074660429 .activeText0,#mermaid-1703074660429 .activeText1,#mermaid-1703074660429 .activeText2,#mermaid-1703074660429 .activeText3{fill:#333!important}#mermaid-1703074660429 .done0,#mermaid-1703074660429 .done1,#mermaid-1703074660429 .done2,#mermaid-1703074660429 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074660429 .doneText0,#mermaid-1703074660429 .doneText1,#mermaid-1703074660429 .doneText2,#mermaid-1703074660429 .doneText3{fill:#333!important}#mermaid-1703074660429 .crit0,#mermaid-1703074660429 .crit1,#mermaid-1703074660429 .crit2,#mermaid-1703074660429 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074660429 .activeCrit0,#mermaid-1703074660429 .activeCrit1,#mermaid-1703074660429 .activeCrit2,#mermaid-1703074660429 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074660429 .doneCrit0,#mermaid-1703074660429 .doneCrit1,#mermaid-1703074660429 .doneCrit2,#mermaid-1703074660429 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074660429 .activeCritText0,#mermaid-1703074660429 .activeCritText1,#mermaid-1703074660429 .activeCritText2,#mermaid-1703074660429 .activeCritText3,#mermaid-1703074660429 .doneCritText0,#mermaid-1703074660429 .doneCritText1,#mermaid-1703074660429 .doneCritText2,#mermaid-1703074660429 .doneCritText3{fill:#333!important}#mermaid-1703074660429 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074660429 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074660429 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074660429 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074660429 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074660429 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074660429 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074660429 #compositionEnd,#mermaid-1703074660429 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660429 #aggregationEnd,#mermaid-1703074660429 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074660429 #dependencyEnd,#mermaid-1703074660429 #dependencyStart,#mermaid-1703074660429 #extensionEnd,#mermaid-1703074660429 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660429 .branch-label,#mermaid-1703074660429 .commit-id,#mermaid-1703074660429 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074660429 .myGraph &gt; * { fill:#c7e9f3 !important; }</style>
+<style>#mermaid-1703074660429 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M229.421875,124.9722671508789L254.421875,124.9722671508789L279.9218765258789,125.47226715087889" marker-end="url(#arrowhead27)" style="fill:none"></path><defs><marker id="arrowhead27" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M446.0311904413474,86.29720606634734L521.3468780517578,39L590.0101623535156,39" marker-end="url(#arrowhead28)" style="fill:none"></path><defs><marker id="arrowhead28" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M446.0311885543426,164.6473270706574L521.3468780517578,210.9445343017578L558.4875061035159,211.44453430175784" marker-end="url(#arrowhead29)" style="fill:none"></path><defs><marker id="arrowhead29" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M764.3765625,211.44453430175784L800.5171966552734,210.9445343017578L837.6578231811523,211.4445343017578" marker-end="url(#arrowhead30)" style="fill:none"></path><defs><marker id="arrowhead30" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1043.7015701293944,211.4445343017578L1079.8421936035156,210.9445343017578L1116.4828186035156,210.9445343017578" marker-end="url(#arrowhead31)" style="fill:none"></path><defs><marker id="arrowhead31" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(521.3468780517578,39)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(521.3468780517578,210.9445343017578)"><g transform="translate(-9.78125,-9)" class="label"><foreignobject width="19.5625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">No</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(800.5171966552734,210.9445343017578)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(1079.8421936035156,210.9445343017578)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="D1" transform="translate(124.7109375,124.9722671508789)" style="opacity: 1;"><rect rx="5" ry="5" x="-104.7109375" y="-19" width="209.421875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-94.7109375,-9)"><foreignobject width="189.421875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">For each landmark in state</div></foreignobject></g></g></g><g class="node myGraph" id="D2" transform="translate(382.0640640258789,124.9722671508789)" style="opacity: 1;"><polygon points="102.6421875,0 205.284375,-102.6421875 102.6421875,-205.284375 0,-102.6421875" rx="5" ry="5" transform="translate(-102.6421875,102.6421875)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-76.046875,-18)"><foreignobject width="152.09375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Landmark associated<br> with measurements?</div></foreignobject></g></g></g><g class="node myGraph" id="D3" transform="translate(660.9320373535156,39)" style="opacity: 1;"><rect rx="5" ry="5" x="-70.921875" y="-19" width="141.84375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-60.921875,-9)"><foreignobject width="121.84375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Update landmark</div></foreignobject></g></g></g><g class="node myGraph" id="D4" transform="translate(660.9320373535156,210.9445343017578)" style="opacity: 1;"><polygon points="102.94453125,0 205.8890625,-102.94453125 102.94453125,-205.8890625 0,-102.94453125" rx="5" ry="5" transform="translate(-102.94453125,102.94453125)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-85.3828125,-9)"><foreignobject width="170.765625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Landmark within range?</div></foreignobject></g></g></g><g class="node myGraph" id="D5" transform="translate(940.1796951293945,210.9445343017578)" style="opacity: 1;"><polygon points="103.02187500000001,0 206.04375000000002,-103.02187500000001 103.02187500000001,-206.04375000000002 0,-103.02187500000001" rx="5" ry="5" transform="translate(-103.02187500000001,103.02187500000001)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-76.46875,-18)"><foreignobject width="152.9375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Landmark meets M/N<br> logic criteria?</div></foreignobject></g></g></g><g class="node myGraph" id="D6" transform="translate(1184.7328186035156,210.9445343017578)" style="opacity: 1;"><rect rx="5" ry="5" x="-68.25" y="-19" width="136.5" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-58.25,-9)"><foreignobject width="116.5" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Delete landmark</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+    <figcaption class="caption">Landmark deletion procedure.</figcaption>
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    In this step if a landmark is not associated with any measurements and is close enough to the sensor that it should be observed, we use M/N logic determine if the landmark should be deleted.<br><br>
+
+    Deleting landmarks allows us to remove any which may have been incorrectly initialized or may have left the scene (i.e. a car has now left the car park).
+  </div>
+</div>
+
+<hr>
+
+<h3 id="measurement-clustering">Measurement Clustering</h3>
+
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074660851" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 496.421875px;" viewbox="0 0 496.421875 585.0828094482422"><style>#mermaid-1703074660851 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074660851 .node circle,#mermaid-1703074660851 .node ellipse,#mermaid-1703074660851 .node polygon,#mermaid-1703074660851 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074660851 .node.clickable{cursor:pointer}#mermaid-1703074660851 .arrowheadPath{fill:#333}#mermaid-1703074660851 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074660851 .edgeLabel{background-color:#fff}#mermaid-1703074660851 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074660851 .cluster text{fill:#333}#mermaid-1703074660851 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074660851 .actor{stroke:#999;fill:#eee}#mermaid-1703074660851 text.actor{fill:#333;stroke:none}#mermaid-1703074660851 .actor-line{stroke:#666}#mermaid-1703074660851 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074660851 .messageLine0,#mermaid-1703074660851 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074660851 #arrowhead{fill:#333}#mermaid-1703074660851 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074660851 .messageText{fill:#333;stroke:none}#mermaid-1703074660851 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074660851 .labelText,#mermaid-1703074660851 .loopText{fill:#fff;stroke:none}#mermaid-1703074660851 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074660851 .note{stroke:#770;fill:#ffa}#mermaid-1703074660851 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074660851 .section{stroke:none;opacity:.2}#mermaid-1703074660851 .section0,#mermaid-1703074660851 .section2{fill:#80b3e6}#mermaid-1703074660851 .section1,#mermaid-1703074660851 .section3{fill:#fff;opacity:.2}#mermaid-1703074660851 .sectionTitle0,#mermaid-1703074660851 .sectionTitle1,#mermaid-1703074660851 .sectionTitle2,#mermaid-1703074660851 .sectionTitle3{fill:#333}#mermaid-1703074660851 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074660851 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074660851 .grid path{stroke-width:0}#mermaid-1703074660851 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074660851 .task{stroke-width:2}#mermaid-1703074660851 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074660851 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074660851 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074660851 .taskText0,#mermaid-1703074660851 .taskText1,#mermaid-1703074660851 .taskText2,#mermaid-1703074660851 .taskText3{fill:#fff}#mermaid-1703074660851 .task0,#mermaid-1703074660851 .task1,#mermaid-1703074660851 .task2,#mermaid-1703074660851 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074660851 .taskTextOutside0,#mermaid-1703074660851 .taskTextOutside1,#mermaid-1703074660851 .taskTextOutside2,#mermaid-1703074660851 .taskTextOutside3{fill:#333}#mermaid-1703074660851 .active0,#mermaid-1703074660851 .active1,#mermaid-1703074660851 .active2,#mermaid-1703074660851 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074660851 .activeText0,#mermaid-1703074660851 .activeText1,#mermaid-1703074660851 .activeText2,#mermaid-1703074660851 .activeText3{fill:#333!important}#mermaid-1703074660851 .done0,#mermaid-1703074660851 .done1,#mermaid-1703074660851 .done2,#mermaid-1703074660851 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074660851 .doneText0,#mermaid-1703074660851 .doneText1,#mermaid-1703074660851 .doneText2,#mermaid-1703074660851 .doneText3{fill:#333!important}#mermaid-1703074660851 .crit0,#mermaid-1703074660851 .crit1,#mermaid-1703074660851 .crit2,#mermaid-1703074660851 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074660851 .activeCrit0,#mermaid-1703074660851 .activeCrit1,#mermaid-1703074660851 .activeCrit2,#mermaid-1703074660851 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074660851 .doneCrit0,#mermaid-1703074660851 .doneCrit1,#mermaid-1703074660851 .doneCrit2,#mermaid-1703074660851 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074660851 .activeCritText0,#mermaid-1703074660851 .activeCritText1,#mermaid-1703074660851 .activeCritText2,#mermaid-1703074660851 .activeCritText3,#mermaid-1703074660851 .doneCritText0,#mermaid-1703074660851 .doneCritText1,#mermaid-1703074660851 .doneCritText2,#mermaid-1703074660851 .doneCritText3{fill:#333!important}#mermaid-1703074660851 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074660851 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074660851 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074660851 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074660851 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074660851 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074660851 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074660851 #compositionEnd,#mermaid-1703074660851 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660851 #aggregationEnd,#mermaid-1703074660851 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074660851 #dependencyEnd,#mermaid-1703074660851 #dependencyStart,#mermaid-1703074660851 #extensionEnd,#mermaid-1703074660851 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074660851 .branch-label,#mermaid-1703074660851 .commit-id,#mermaid-1703074660851 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074660851 .myGraph &gt; * { fill:#c7e9f3 !important; }</style>
+<style>#mermaid-1703074660851 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M223.52734375,58L223.52734375,83L223.52734375,108" marker-end="url(#arrowhead25)" style="fill:none"></path><defs><marker id="arrowhead25" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M223.52734375,146L223.52734375,171L223.52734375,196" marker-end="url(#arrowhead26)" style="fill:none"></path><defs><marker id="arrowhead26" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M223.52734375,234L223.52734375,259L224.02734375,284.5000015258789" marker-end="url(#arrowhead27)" style="fill:none"></path><defs><marker id="arrowhead27" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M174.43166500497463,433.98713222909566L90.921875,517.0828094482422L90.921875,551.0828094482422" marker-end="url(#arrowhead28)" style="fill:none"></path><defs><marker id="arrowhead28" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M273.6230240155384,433.98713376034055L356.1328125,517.0828094482422L356.1328125,551.0828094482422" marker-end="url(#arrowhead29)" style="fill:none"></path><defs><marker id="arrowhead29" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(90.921875,517.0828094482422)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(356.1328125,517.0828094482422)"><g transform="translate(-9.78125,-9)" class="label"><foreignobject width="19.5625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">No</span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="C1" transform="translate(223.52734375,39)" style="opacity: 1;"><rect rx="5" ry="5" x="-131.390625" y="-19" width="262.78125" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-121.390625,-9)"><foreignobject width="242.78125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cluster unselected measurements</div></foreignobject></g></g></g><g class="node myGraph" id="C2" transform="translate(223.52734375,127)" style="opacity: 1;"><rect rx="5" ry="5" x="-67.359375" y="-19" width="134.71875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-57.359375,-9)"><foreignobject width="114.71875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">For each cluster</div></foreignobject></g></g></g><g class="node myGraph" id="C3" transform="translate(223.52734375,215)" style="opacity: 1;"><rect rx="5" ry="5" x="-157.1796875" y="-19" width="314.359375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-147.1796875,-9)"><foreignobject width="294.359375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Calculate distances landmarks to clusters</div></foreignobject></g></g></g><g class="node myGraph" id="C4" transform="translate(223.52734375,383.5414047241211)" style="opacity: 1;"><polygon points="99.54140625000001,0 199.08281250000002,-99.54140625000001 99.54140625000001,-199.08281250000002 0,-99.54140625000001" rx="5" ry="5" transform="translate(-99.54140625000001,99.54140625000001)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-81.6015625,-9)"><foreignobject width="163.203125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Distances &lt; threshold?</div></foreignobject></g></g></g><g class="node myGraph" id="C5" transform="translate(90.921875,570.0828094482422)" style="opacity: 1;"><rect rx="5" ry="5" x="-70.921875" y="-19" width="141.84375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-60.921875,-9)"><foreignobject width="121.84375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Update landmark</div></foreignobject></g></g></g><g class="node myGraph" id="C6" transform="translate(356.1328125,570.0828094482422)" style="opacity: 1;"><rect rx="5" ry="5" x="-144.2890625" y="-19" width="288.578125" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-134.2890625,-9)"><foreignobject width="268.578125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Add cluster to unconfirmed landmarks</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+  </div>
+  <div class="col-md-8 mt-3 mt-md-1">
+    Measurements which were not initially selected as close to an existing landmark are clustered.<br><br>
+
+    If a cluster is within a specified distance of an existing landmark it is used to update the landmark otherwise it is considered an unconfirmed landmark.
+
+    <div class="col-md-8 offset-md-2 mt-3">
+      
+
+<figure>
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/sifting_clustering-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/sifting_clustering-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/sifting_clustering-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1 p-2" src="/assets/img/sifting_clustering.png" alt="" title="Sifting and confirmation" data-zoomable="">
+  </picture>
+
+  <figcaption class="caption">Measurements are sifted with each red diamond representing a landmark, remaining measurements are clustered, with measurements that do not belong to a cluster treated as false detections.</figcaption>
+</figure>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h3 id="landmark-confirmation">Landmark Confirmation</h3>
+
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074661260" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 418.3093719482422px;" viewbox="0 0 418.3093719482422 718.9156188964844"><style>#mermaid-1703074661260 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074661260 .node circle,#mermaid-1703074661260 .node ellipse,#mermaid-1703074661260 .node polygon,#mermaid-1703074661260 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074661260 .node.clickable{cursor:pointer}#mermaid-1703074661260 .arrowheadPath{fill:#333}#mermaid-1703074661260 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074661260 .edgeLabel{background-color:#fff}#mermaid-1703074661260 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074661260 .cluster text{fill:#333}#mermaid-1703074661260 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074661260 .actor{stroke:#999;fill:#eee}#mermaid-1703074661260 text.actor{fill:#333;stroke:none}#mermaid-1703074661260 .actor-line{stroke:#666}#mermaid-1703074661260 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074661260 .messageLine0,#mermaid-1703074661260 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074661260 #arrowhead{fill:#333}#mermaid-1703074661260 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074661260 .messageText{fill:#333;stroke:none}#mermaid-1703074661260 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074661260 .labelText,#mermaid-1703074661260 .loopText{fill:#fff;stroke:none}#mermaid-1703074661260 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074661260 .note{stroke:#770;fill:#ffa}#mermaid-1703074661260 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074661260 .section{stroke:none;opacity:.2}#mermaid-1703074661260 .section0,#mermaid-1703074661260 .section2{fill:#80b3e6}#mermaid-1703074661260 .section1,#mermaid-1703074661260 .section3{fill:#fff;opacity:.2}#mermaid-1703074661260 .sectionTitle0,#mermaid-1703074661260 .sectionTitle1,#mermaid-1703074661260 .sectionTitle2,#mermaid-1703074661260 .sectionTitle3{fill:#333}#mermaid-1703074661260 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074661260 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074661260 .grid path{stroke-width:0}#mermaid-1703074661260 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074661260 .task{stroke-width:2}#mermaid-1703074661260 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074661260 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074661260 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074661260 .taskText0,#mermaid-1703074661260 .taskText1,#mermaid-1703074661260 .taskText2,#mermaid-1703074661260 .taskText3{fill:#fff}#mermaid-1703074661260 .task0,#mermaid-1703074661260 .task1,#mermaid-1703074661260 .task2,#mermaid-1703074661260 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074661260 .taskTextOutside0,#mermaid-1703074661260 .taskTextOutside1,#mermaid-1703074661260 .taskTextOutside2,#mermaid-1703074661260 .taskTextOutside3{fill:#333}#mermaid-1703074661260 .active0,#mermaid-1703074661260 .active1,#mermaid-1703074661260 .active2,#mermaid-1703074661260 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074661260 .activeText0,#mermaid-1703074661260 .activeText1,#mermaid-1703074661260 .activeText2,#mermaid-1703074661260 .activeText3{fill:#333!important}#mermaid-1703074661260 .done0,#mermaid-1703074661260 .done1,#mermaid-1703074661260 .done2,#mermaid-1703074661260 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074661260 .doneText0,#mermaid-1703074661260 .doneText1,#mermaid-1703074661260 .doneText2,#mermaid-1703074661260 .doneText3{fill:#333!important}#mermaid-1703074661260 .crit0,#mermaid-1703074661260 .crit1,#mermaid-1703074661260 .crit2,#mermaid-1703074661260 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074661260 .activeCrit0,#mermaid-1703074661260 .activeCrit1,#mermaid-1703074661260 .activeCrit2,#mermaid-1703074661260 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074661260 .doneCrit0,#mermaid-1703074661260 .doneCrit1,#mermaid-1703074661260 .doneCrit2,#mermaid-1703074661260 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074661260 .activeCritText0,#mermaid-1703074661260 .activeCritText1,#mermaid-1703074661260 .activeCritText2,#mermaid-1703074661260 .activeCritText3,#mermaid-1703074661260 .doneCritText0,#mermaid-1703074661260 .doneCritText1,#mermaid-1703074661260 .doneCritText2,#mermaid-1703074661260 .doneCritText3{fill:#333!important}#mermaid-1703074661260 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074661260 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074661260 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074661260 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074661260 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074661260 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074661260 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074661260 #compositionEnd,#mermaid-1703074661260 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074661260 #aggregationEnd,#mermaid-1703074661260 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074661260 #dependencyEnd,#mermaid-1703074661260 #dependencyStart,#mermaid-1703074661260 #extensionEnd,#mermaid-1703074661260 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074661260 .branch-label,#mermaid-1703074661260 .commit-id,#mermaid-1703074661260 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074661260 .myGraph &gt; * { fill:#c7e9f3 !important; }</style>
+<style>#mermaid-1703074661260 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M206.21015548706055,58L206.21015548706055,83L206.71015548706058,108.500001525879" marker-end="url(#arrowhead21)" style="fill:none"></path><defs><marker id="arrowhead21" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M156.5072173364836,293.16893532354425L93.1328125,376.8718719482422L93.1328125,494.8937454223633" marker-end="url(#arrowhead22)" style="fill:none"></path><defs><marker id="arrowhead22" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M256.9130949422399,293.16893707069966L319.2874984741211,376.8718719482422L319.7874984741211,411.3718734741213" marker-end="url(#arrowhead23)" style="fill:none"></path><defs><marker id="arrowhead23" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M319.7874984741211,617.4156204223634L319.2874984741211,650.9156188964844L319.2874984741211,684.9156188964844" marker-end="url(#arrowhead24)" style="fill:none"></path><defs><marker id="arrowhead24" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(93.1328125,376.8718719482422)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(319.2874984741211,376.8718719482422)"><g transform="translate(-9.78125,-9)" class="label"><foreignobject width="19.5625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">No</span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(319.2874984741211,650.9156188964844)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="CL1" transform="translate(206.21015548706055,39)" style="opacity: 1;"><rect rx="5" ry="5" x="-122.9453125" y="-19" width="245.890625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-112.9453125,-9)"><foreignobject width="225.890625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">For each unconfirmed landmark</div></foreignobject></g></g></g><g class="node myGraph" id="CL2" transform="translate(206.21015548706055,225.4359359741211)" style="opacity: 1;"><polygon points="117.43593750000001,0 234.87187500000002,-117.43593750000001 117.43593750000001,-234.87187500000002 0,-117.43593750000001" rx="5" ry="5" transform="translate(-117.43593750000001,117.43593750000001)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-92.484375,-18)"><foreignobject width="184.96875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Number of measurements<br> &gt; threshold?</div></foreignobject></g></g></g><g class="node myGraph" id="CL3" transform="translate(93.1328125,513.8937454223633)" style="opacity: 1;"><rect rx="5" ry="5" x="-73.1328125" y="-19" width="146.265625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.1328125,-9)"><foreignobject width="126.265625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Confirm landmark</div></foreignobject></g></g></g><g class="node myGraph" id="CL4" transform="translate(319.2874984741211,513.8937454223633)" style="opacity: 1;"><polygon points="103.02187500000001,0 206.04375000000002,-103.02187500000001 103.02187500000001,-206.04375000000002 0,-103.02187500000001" rx="5" ry="5" transform="translate(-103.02187500000001,103.02187500000001)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-76.46875,-18)"><foreignobject width="152.9375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Landmark meets M/N<br> logic criteria?</div></foreignobject></g></g></g><g class="node myGraph" id="CL5" transform="translate(319.2874984741211,703.9156188964844)" style="opacity: 1;"><rect rx="5" ry="5" x="-73.1328125" y="-19" width="146.265625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.1328125,-9)"><foreignobject width="126.265625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Confirm landmark</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+  </div>
+  <div class="col-md-8 mt-3 mt-md-1">
+    There are two ways of confirming a landmark:
+    <ol>
+      <li>If the number of measurements associated with the unconfirmed landmark are above a defined threshold</li>
+      <li>If the landmark has been observed often enough according to the M/N logic</li>
+    </ol>
+    Once a landmark is confirmed it is added to the system state.
+
+    <div class="col-md-8 offset-md-2 mt-3">
+      
+
+<figure>
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/confirmation-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/confirmation-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/confirmation-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1 p-2" src="/assets/img/confirmation.png" alt="" title="Landmark confirmation rules" data-zoomable="">
+  </picture>
+
+  <figcaption class="caption">Landmark confirmation rules.</figcaption>
+</figure>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h3 id="landmark-merging">Landmark Merging</h3>
+
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-1">
+    <div class="jekyll-diagrams diagrams mermaid">
+  <svg id="mermaid-1703074661659" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 783.9109344482422px;" viewbox="0 0 783.9109344482422 215.0828094482422"><style>#mermaid-1703074661659 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1703074661659 .node circle,#mermaid-1703074661659 .node ellipse,#mermaid-1703074661659 .node polygon,#mermaid-1703074661659 .node rect{fill:#eee;stroke:#999;stroke-width:1px}#mermaid-1703074661659 .node.clickable{cursor:pointer}#mermaid-1703074661659 .arrowheadPath{fill:#333}#mermaid-1703074661659 .edgePath .path{stroke:#666;stroke-width:1.5px}#mermaid-1703074661659 .edgeLabel{background-color:#fff}#mermaid-1703074661659 .cluster rect{fill:#eaf2fb!important;stroke:#26a!important;stroke-width:1px!important}#mermaid-1703074661659 .cluster text{fill:#333}#mermaid-1703074661659 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#eaf2fb;border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1703074661659 .actor{stroke:#999;fill:#eee}#mermaid-1703074661659 text.actor{fill:#333;stroke:none}#mermaid-1703074661659 .actor-line{stroke:#666}#mermaid-1703074661659 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1703074661659 .messageLine0,#mermaid-1703074661659 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1703074661659 #arrowhead{fill:#333}#mermaid-1703074661659 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1703074661659 .messageText{fill:#333;stroke:none}#mermaid-1703074661659 .labelBox{stroke:#999;fill:#eee}#mermaid-1703074661659 .labelText,#mermaid-1703074661659 .loopText{fill:#fff;stroke:none}#mermaid-1703074661659 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#999}#mermaid-1703074661659 .note{stroke:#770;fill:#ffa}#mermaid-1703074661659 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1703074661659 .section{stroke:none;opacity:.2}#mermaid-1703074661659 .section0,#mermaid-1703074661659 .section2{fill:#80b3e6}#mermaid-1703074661659 .section1,#mermaid-1703074661659 .section3{fill:#fff;opacity:.2}#mermaid-1703074661659 .sectionTitle0,#mermaid-1703074661659 .sectionTitle1,#mermaid-1703074661659 .sectionTitle2,#mermaid-1703074661659 .sectionTitle3{fill:#333}#mermaid-1703074661659 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1703074661659 .grid .tick{stroke:#e6e6e6;opacity:.3;shape-rendering:crispEdges}#mermaid-1703074661659 .grid path{stroke-width:0}#mermaid-1703074661659 .today{fill:none;stroke:#d42;stroke-width:2px}#mermaid-1703074661659 .task{stroke-width:2}#mermaid-1703074661659 .taskText{text-anchor:middle;font-size:11px}#mermaid-1703074661659 .taskTextOutsideRight{fill:#333;text-anchor:start;font-size:11px}#mermaid-1703074661659 .taskTextOutsideLeft{fill:#333;text-anchor:end;font-size:11px}#mermaid-1703074661659 .taskText0,#mermaid-1703074661659 .taskText1,#mermaid-1703074661659 .taskText2,#mermaid-1703074661659 .taskText3{fill:#fff}#mermaid-1703074661659 .task0,#mermaid-1703074661659 .task1,#mermaid-1703074661659 .task2,#mermaid-1703074661659 .task3{fill:#26a;stroke:#1a4d80}#mermaid-1703074661659 .taskTextOutside0,#mermaid-1703074661659 .taskTextOutside1,#mermaid-1703074661659 .taskTextOutside2,#mermaid-1703074661659 .taskTextOutside3{fill:#333}#mermaid-1703074661659 .active0,#mermaid-1703074661659 .active1,#mermaid-1703074661659 .active2,#mermaid-1703074661659 .active3{fill:#eee;stroke:#1a4d80}#mermaid-1703074661659 .activeText0,#mermaid-1703074661659 .activeText1,#mermaid-1703074661659 .activeText2,#mermaid-1703074661659 .activeText3{fill:#333!important}#mermaid-1703074661659 .done0,#mermaid-1703074661659 .done1,#mermaid-1703074661659 .done2,#mermaid-1703074661659 .done3{stroke:#666;fill:#bbb;stroke-width:2}#mermaid-1703074661659 .doneText0,#mermaid-1703074661659 .doneText1,#mermaid-1703074661659 .doneText2,#mermaid-1703074661659 .doneText3{fill:#333!important}#mermaid-1703074661659 .crit0,#mermaid-1703074661659 .crit1,#mermaid-1703074661659 .crit2,#mermaid-1703074661659 .crit3{stroke:#b1361b;fill:#d42;stroke-width:2}#mermaid-1703074661659 .activeCrit0,#mermaid-1703074661659 .activeCrit1,#mermaid-1703074661659 .activeCrit2,#mermaid-1703074661659 .activeCrit3{stroke:#b1361b;fill:#eee;stroke-width:2}#mermaid-1703074661659 .doneCrit0,#mermaid-1703074661659 .doneCrit1,#mermaid-1703074661659 .doneCrit2,#mermaid-1703074661659 .doneCrit3{stroke:#b1361b;fill:#bbb;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1703074661659 .activeCritText0,#mermaid-1703074661659 .activeCritText1,#mermaid-1703074661659 .activeCritText2,#mermaid-1703074661659 .activeCritText3,#mermaid-1703074661659 .doneCritText0,#mermaid-1703074661659 .doneCritText1,#mermaid-1703074661659 .doneCritText2,#mermaid-1703074661659 .doneCritText3{fill:#333!important}#mermaid-1703074661659 .titleText{text-anchor:middle;font-size:18px;fill:#333}#mermaid-1703074661659 g.classGroup text{fill:#999;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1703074661659 g.classGroup rect{fill:#eee;stroke:#999}#mermaid-1703074661659 g.classGroup line{stroke:#999;stroke-width:1}#mermaid-1703074661659 .classLabel .box{stroke:none;stroke-width:0;fill:#eee;opacity:.5}#mermaid-1703074661659 .classLabel .label{fill:#999;font-size:10px}#mermaid-1703074661659 .relation{stroke:#999;stroke-width:1;fill:none}#mermaid-1703074661659 #compositionEnd,#mermaid-1703074661659 #compositionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074661659 #aggregationEnd,#mermaid-1703074661659 #aggregationStart{fill:#eee;stroke:#999;stroke-width:1}#mermaid-1703074661659 #dependencyEnd,#mermaid-1703074661659 #dependencyStart,#mermaid-1703074661659 #extensionEnd,#mermaid-1703074661659 #extensionStart{fill:#999;stroke:#999;stroke-width:1}#mermaid-1703074661659 .branch-label,#mermaid-1703074661659 .commit-id,#mermaid-1703074661659 .commit-msg{fill:#d3d3d3;color:#d3d3d3}
+#mermaid-1703074661659 .myGraph &gt; * { fill:#c7e9f3 !important; }</style>
+<style>#mermaid-1703074661659 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style>
+<g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M321.9375,119.5414047241211L346.9375,119.5414047241211L372.43750152587893,120.0414047241211" marker-end="url(#arrowhead13)" style="fill:none"></path><defs><marker id="arrowhead13" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M571.5203109741212,120.0414047241211L607.6609344482422,119.5414047241211L644.3015594482422,119.5414047241211" marker-end="url(#arrowhead14)" style="fill:none"></path><defs><marker id="arrowhead14" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(607.6609344482422,119.5414047241211)"><g transform="translate(-11.640625,-9)" class="label"><foreignobject width="23.28125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Yes</span></div></foreignobject></g></g></g><g class="nodes"><g class="node myGraph" id="M1" transform="translate(170.96875,119.5414047241211)" style="opacity: 1;"><rect rx="5" ry="5" x="-150.96875" y="-19" width="301.9375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-140.96875,-9)"><foreignobject width="281.9375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Calculate distances between landmarks</div></foreignobject></g></g></g><g class="node myGraph" id="M2" transform="translate(471.4789047241211,119.5414047241211)" style="opacity: 1;"><polygon points="99.54140625000001,0 199.08281250000002,-99.54140625000001 99.54140625000001,-199.08281250000002 0,-99.54140625000001" rx="5" ry="5" transform="translate(-99.54140625000001,99.54140625000001)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-81.6015625,-9)"><foreignobject width="163.203125" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Distances &lt; threshold?</div></foreignobject></g></g></g><g class="node myGraph" id="M3" transform="translate(716.1062469482422,119.5414047241211)" style="opacity: 1;"><rect rx="5" ry="5" x="-71.8046875" y="-19" width="143.609375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.8046875,-9)"><foreignobject width="123.609375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Merge landmarks</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    Finally, there is still a possibility that two landmarks in the system may in reality relate to the same landmark.<br><br>
+
+    If the distance between two landmarks is less than a set threshold they are merged.
+  </div>
+</div>
+
+<hr>
+
+<h3 id="example-ekf-slam-with-landmark-management">Example EKF-SLAM with Landmark Management</h3>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 mt-3 mt-md-0">
+    <div class="embed-responsive embed-responsive-4by3">
+      <video class="embed-responsive-item" preload="metadata" controls="" src="../../assets/img/radarSLAM_sim.mp4" type="video/mp4"> </video>
+    </div>
+    <figcaption class="caption">Example of landmark management using EKF SLAM</figcaption>
+  </div>
+</div>
+
+<hr>
+
+<h3 id="extended-targets">Extended Targets</h3>
+
+<div class="row align-items-top justify-content-center">
+  <div class="col-md-7 mt-3 mt-md-1">
+    Current work <a class="citation" href="#Sun2022a">[2]</a> is looking at how to produce a more precise map, in order to better facilitate navigation and path planning.<br><br>
+
+    To do this we are using an ellipse model to generate extended landmarks and investigating how to take advantage of the landmark extent estimation in the update of the EKF-SLAM.
+  </div>
+  <div class="col-md-5 mt-3 mt-md-1">
+    
+
+<figure>
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/Landmark_Extent-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/Landmark_Extent-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/Landmark_Extent-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1 p-2" src="/assets/img/Landmark_Extent.png" title="Landmark Extent Estimation" data-zoomable="">
+  </picture>
+
+  <figcaption class="caption">Example of landmark extent estimation.</figcaption>
+</figure>
+
+  </div>
+</div>
+
+<hr>
+
+<h3 id="code">Code</h3>
+<p>Orientation estimation code can be found here: <a href="https://github.com/shuai000/SLAM_LandmarkManagement" target="_blank" rel="noopener noopener noreferrer">SLAM Landmark Management</a></p>
+
+<hr>
+
+<h3 id="references">References</h3>
+<div class="references">
+  <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Sun2022" class="col-sm-12">
+    
+      <!-- Title -->
+      <div class="title">Landmark Management in the Application of Radar SLAM</div>
+      <!-- Author -->
+      <div class="author">
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Shuai Sun,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                <em>Beth Jelfs</em>,
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Kamran Ghorbani,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Glenn Matthews,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  and Christopher Gilliam
+                
+              
+            
+          
+
+        
+      </div>
+
+      <!-- Journal/Book title and data -->
+      
+      
+      
+      
+      <div class="periodical">
+        In <em>Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference,</em>  2022,   pp. 903–910.
+      </div>
+    
+
+    <div class="links">
+      
+        <a class="abstract btn btn-sm z-depth-0 mr-0" role="button">abstract</a>
+      
+      
+        <a href="http://doi.org/10.23919/APSIPAASC55919.2022.9980051" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener noopener noreferrer">doi</a>
+      
+      
+        <a href="http://arxiv.org/abs/2209.07199" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener noopener noreferrer">arXiv</a>
+      
+      
+      
+        <a href="/assets/pdf/2022_APSIPA.pdf" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">pdf</a>
+      
+      
+      
+      
+        <a href="/assets/pdf/2022_APSIPA_slides.pdf" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">slides</a>
+      
+      
+        <a href="https://github.com/shuai000/SLAM_LandmarkManagement" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener noopener noreferrer">code</a>
+      
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper focuses on efficient landmark management in radar based simultaneous localization and mapping (SLAM). Landmark management is necessary in order to maintain a consistent map of the estimated landmarks relative to the estimate of the platform’s pose. This task is particularly important when faced with multiple detections from the same landmark and/or dynamic environments where the location of a landmark can change. A further challenge with radar data is the presence of false detections. Accordingly, we propose a simple yet efficient rule based solution for radar SLAM landmark management. Assuming a low-dynamic environment, there are several steps in our solution: new landmarks need to be detected and included, false landmarks need to be identified and removed, and the consistency of the landmarks registered in the map needs to be maintained. To illustrate our solution, we run an extended Kalman filter SLAM algorithm in an environment containing both stationary and temporally stationary landmarks. Our simulation results demonstrate that the proposed solution is capable of reliably managing landmarks even when faced with false detections and multiple detections from the same landmark.</p>
+    </div>
+    
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Sun2022a" class="col-sm-12">
+    
+      <!-- Title -->
+      <div class="title">Mapping Extended Landmarks for Radar SLAM</div>
+      <!-- Author -->
+      <div class="author">
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Shuai Sun,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Christopher Gilliam,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Kamran Ghorbani,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                
+                  Glenn Matthews,
+                
+              
+            
+          
+
+        
+          
+          
+
+          
+          
+
+          
+            
+              
+                and <em>Beth Jelfs</em>
+              
+            
+          
+
+        
+      </div>
+
+      <!-- Journal/Book title and data -->
+      
+      
+      
+      
+      <div class="periodical">
+        <em>arXiv:2210.17207</em>  2022,   pp. 903–910.
+      </div>
+    
+
+    <div class="links">
+      
+        <a class="abstract btn btn-sm z-depth-0 mr-0" role="button">abstract</a>
+      
+      
+      
+        <a href="http://arxiv.org/abs/2210.17207" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener noopener noreferrer">arXiv</a>
+      
+      
+      
+        <a href="/assets/pdf/2022_Sun.pdf" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank">pdf</a>
+      
+      
+      
+      
+      
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Simultaneous localization and mapping (SLAM) using automotive radar sensors can provide enhanced sensing capabilities for autonomous systems. In SLAM applications, with a greater requirement for the environment map, information on the extent of landmarks is vital for precise navigation and path planning. Although object extent estimation has been successfully applied in target tracking, its adaption to SLAM remains unaddressed due to the additional uncertainty of the sensor platform, bias in the odometer reading, as well as the measurement non-linearity. In this paper, we propose to incorporate the Bayesian random matrix approach to estimate the extent of landmarks in radar SLAM. We describe the details for implementation of landmark extent initialization, prediction and update. To validate the performance of our proposed approach we compare with the model-free ellipse fitting algorithm with results showing more consistent extent estimation. We also demonstrate that exploiting the landmark extent in the state update can improve localization accuracy.</p>
+    </div>
+    
+  </div>
+</div>
+</li>
+</ol>
+</div>
+
+
+    
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+  <footer class="fixed-bottom">
+    <div class="container mt-0">
+      © Copyright 2023 Beth  Jelfs. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+
+      
+      
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+
+  <!-- Medium Zoom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+
+
+  </body>
+</html>
+
