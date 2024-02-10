@@ -4,6 +4,9 @@ title: Radar SLAM
 description: Landmark management for radar SLAM
 img: /assets/img/observation.png
 importance: 1
+mermaid:
+  enabled: true
+  zoomable: true
 ---
 
 <div class="row align-items-top justify-content-center">
@@ -29,7 +32,7 @@ importance: 1
     To determine whether an existing landmark should be deleted or an unconfirmed landmark should be confirmed we use M/N logic - if a landmark has been observed M times in the last N timesteps it is confirmed/deleted.
   </div>
   <div class="col-md-5 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph TD
         A(k = 1) --> B(EKF Prediction)
         B --> C(Get radar measurements Z<sub>k</sub>)
@@ -44,11 +47,9 @@ importance: 1
         K --> D
         D --> B
 
-        classDef myGraph fill:#c7e9f3;
         classDef highlight fill:#9cd9eb,stroke:#f92080,stroke-width:1px;
-        class A,B,C,D,S1,S2 myGraph;
         class G,H,I,J,K highlight;
-    {% endmermaid %}
+    </pre>
     <figcaption class="caption">Landmark management scheme, highlighted blocks are explained below.</figcaption>
   </div>
 </div>
@@ -59,16 +60,13 @@ importance: 1
 
 <div class="row align-items-center justify-content-center">
   <div class="col-md-7 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph LR
         A1(For each selected measurement)
         A1 --> A2(Calculate log distances)
         A2 --> A3{log distance<br/> < threshold?}
         A3 --"Yes"--> A4(Update EKF state)
-
-        classDef myGraph fill:#c7e9f3;
-        class A1,A2,A3,A4 myGraph
-    {% endmermaid %}
+    </pre>
     <figcaption class="caption">Measurement association procedure.</figcaption>
   </div>
   <div class="col-md-5 mt-3 mt-md-1">
@@ -84,7 +82,7 @@ importance: 1
 
 <div class="row align-items-center justify-content-center">
   <div class="col-md-7 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph LR
         D1(For each landmark in state)
         D1 --> D2{Landmark associated<br/> with measurements?}
@@ -92,10 +90,7 @@ importance: 1
         D2 --"No"--> D4{Landmark within range?}
         D4 --"Yes"--> D5{Landmark meets M/N<br/> logic criteria?}
         D5 --"Yes"--> D6(Delete landmark)
-
-        classDef myGraph fill:#c7e9f3;
-        class D1,D2,D3,D4,D5,D6 myGraph
-    {% endmermaid %}
+    </pre>
     <figcaption class="caption">Landmark deletion procedure.</figcaption>
   </div>
   <div class="col-md-5 mt-3 mt-md-1">
@@ -111,7 +106,7 @@ importance: 1
 
 <div class="row align-items-center justify-content-center">
   <div class="col-md-4 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph TD
         C1(Cluster unselected measurements)
         C1 --> C2(For each cluster)
@@ -119,10 +114,7 @@ importance: 1
         C3 --> C4{Distances < threshold?}
         C4 --"Yes"--> C5(Update landmark)
         C4 --"No"--> C6(Add cluster to unconfirmed landmarks)
-
-        classDef myGraph fill:#c7e9f3;
-        class C1,C2,C3,C4,C5,C6 myGraph
-    {% endmermaid %}
+    </pre>
   </div>
   <div class="col-md-8 mt-3 mt-md-1">
     Measurements which were not initially selected as close to an existing landmark are clustered.<br/><br/>
@@ -141,16 +133,13 @@ importance: 1
 
 <div class="row align-items-center justify-content-center">
   <div class="col-md-4 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph TD
         CL1(For each unconfirmed landmark) --> CL2{Number of measurements<br/> > threshold?}
         CL2 --"Yes"--> CL3(Confirm landmark)
         CL2 --"No"--> CL4{Landmark meets M/N<br/> logic criteria?}
         CL4 --"Yes"--> CL5(Confirm landmark)
-
-        classDef myGraph fill:#c7e9f3;
-        class CL1,CL2,CL3,CL4,CL5 myGraph
-    {% endmermaid %}
+    </pre>
   </div>
   <div class="col-md-8 mt-3 mt-md-1">
     There are two ways of confirming a landmark:
@@ -172,14 +161,11 @@ importance: 1
 
 <div class="row align-items-center justify-content-center">
   <div class="col-md-7 mt-3 mt-md-1">
-    {% mermaid %}
+    <pre class="mermaid">
       graph LR
         M1(Calculate distances between landmarks) --> M2{Distances < threshold?}
         M2 --"Yes"--> M3(Merge landmarks)
-
-        classDef myGraph fill:#c7e9f3;
-        class M1,M2,M3 myGraph
-    {% endmermaid %}
+    </pre>
   </div>
   <div class="col-md-5 mt-3 mt-md-1">
     Finally, there is still a possibility that two landmarks in the system may in reality relate to the same landmark.<br/><br/>
@@ -194,9 +180,7 @@ importance: 1
 
 <div class="row justify-content-center">
   <div class="col-md-6 mt-3 mt-md-0">
-    <div class="embed-responsive embed-responsive-4by3">
-      <video class="embed-responsive-item" preload="metadata" controls="" src="../../assets/img/radarSLAM_sim.mp4" type='video/mp4'> </video>
-    </div>
+    {% include video.html path="assets/img/radarSLAM_sim.mp4" class="img-fluid rounded z-depth-1 p-2" controls=true %}
     <figcaption class="caption">Example of landmark management using EKF SLAM</figcaption>
   </div>
 </div>

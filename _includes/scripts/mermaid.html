@@ -20,7 +20,15 @@
       backup.after(mermaid);
     });
 
-    mermaid.initialize({ theme: theme })
+    mermaid.initialize({
+      theme: 'base',
+      themeVariables: {
+        lineColor: '#757575',
+        primaryColor: '#c7e9f3',
+        primaryTextColor: '#757575',
+        secondaryColor: '#ffdddd',
+      }
+    })
 
     /* Zoomable mermaid diagrams */
     if (typeof d3 !== 'undefined') {

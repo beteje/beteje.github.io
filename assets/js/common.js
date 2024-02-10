@@ -10,6 +10,18 @@ $(document).ready(function() {
   });
   $('a').removeClass('waves-effect waves-light');
 
+  // add functionality for publications expand all button
+  $(".btn-expand").click(function(){
+    if (!$(this).data("openAll")) {
+        $(".collapse").collapse("show");
+    }
+    else {
+        $(".collapse").collapse("hide");
+    }
+    // save last state
+    $(this).data("openAll",!$(this).data("openAll"));
+  });
+
   // bootstrap-toc
   if($('#toc-sidebar').length){
     var navSelector = "#toc-sidebar";
@@ -46,4 +58,3 @@ $(document).ready(function() {
     }
   });
 });
-

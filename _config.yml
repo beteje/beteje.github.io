@@ -81,7 +81,7 @@ osf_id: # your OSF ID
 research_gate_profile: Beth_Jelfs # your profile on ResearchGate
 scopus_id: # your profile on Scopus
 blogger_url: # your blogger URL
-work_url: # work page URL
+work_url: https://www.birmingham.ac.uk/misl # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
@@ -389,6 +389,9 @@ mdb:
 medium_zoom:
   version: "1.0.8"
   integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
+mermaid:
+  version: "10.7.0"
+  integrity: "sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="
 
 # -----------------------------------------------------------------------------
 # Get external JSON data
