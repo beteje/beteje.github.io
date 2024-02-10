@@ -6,7 +6,10 @@ subtitle: Assistant Professor, School of Engineering, University of Birmingham
 profile:
   align: right
   image: profile_pic.jpg
+  image_circular: false # crops the image to make it circular
 news: true # includes a list of news items
+latest_posts: false  # includes a list of the newest posts
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
@@ -14,4 +17,4 @@ I am an Assistant Professor in Signal Processing and Data Analysis in the [Micro
 
 My research interests are in adaptive signal processing especially statistical signal processing and signal characterisation. In particular, I am interested in the intersection of signal processing and machine learning and how signal processing techniques can be used to inform machine learning algorithms. I also have a specific interest in how these techniques can be applied to multichannel and multimodal data, particularly with reference to complex systems, for example neural data.
 
-I am always keen to hear from potential PhD students who have an interest in signal and image processing particularly for time-varying problems.
+> I am always keen to hear from potential PhD students who have an interest in signal and image processing particularly for time-varying problems.

@@ -17,25 +17,20 @@ hr {
 }
 
 table {
-  td,
-  th {
-    font-size: 1rem;
-  }
-
-  th {
-    font-weight: bold;
-  }
+    td, th {
+      color: var(--global-text-color);
+    }
+    td {
+      font-size: 1rem;
+    }
 }
 
-a,
-table.table a {
+a, table.table a {
   color: var(--global-theme-color);
-
   &:hover {
     color: var(--global-hover-color);
     text-decoration: none;
   }
-
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
   }
@@ -48,17 +43,16 @@ table.table a {
   }
 }
 
-figure,
-img {
+figure, img, video {
   max-width: 90vw;
   margin: 0;
 }
 
 blockquote {
   background: var(--global-bg-color);
-  border-left: 5px solid var(--global-theme-color);
-  margin: 1.5em 0;
-  padding: 1em;
+  border-left: 2px solid var(--global-theme-color);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
   font-size: 1.2rem;
 
   p {
@@ -156,6 +150,7 @@ blockquote {
 // Profile
 
 .profile {
+  margin-left: 1rem;
   width: 100%;
 
   .more-info {
@@ -464,7 +459,7 @@ footer.sticky-bottom {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -501,22 +496,7 @@ footer.sticky-bottom {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-  border-bottom: 1px solid $grey-color-light;
-  list-style: none;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  .post-meta {
-    color: $grey-color-light;
-    font-size: 0.875rem;
-    margin-bottom: 0;
-  }
-  a {
-    color: var(--global-text-color);
-    text-decoration: none;
-    &:hover {
-      color: var(--global-theme-color);
-    }
-  }
+
   li {
     border-bottom: 1px solid var(--global-divider-color);
     list-style: none;
@@ -572,13 +552,20 @@ footer.sticky-bottom {
   }
 }
 
+// Distill
+
+.distill {
+  a:hover {
+    border-bottom-color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
 
 // Projects
 
 .projects {
   a {
     text-decoration: none;
-
 
       .card-title {
         color: var(--global-theme-color);
@@ -620,29 +607,26 @@ footer.sticky-bottom {
   .table th {
     background-color: var(--global-theme-color);
   }
-  .table th {
-    background-color: $theme-color;
-  }
 }
 
 table.project-table {
   margin: auto;
   th {
-    color: $cyan-color;
+    color: var(--global-theme-color);
     background-color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 10px;
     padding-right: 10px;
-    border-top: 1px solid $cyan-color;
-    border-bottom: 1px solid $cyan-color;
+    border-top: 1px solid var(--global-theme-color);
+    border-bottom: 1px solid var(--global-theme-color);
     text-align: center;
   }
   tr{
-    background-color: lighten($cyan-color, 50%);
+    background-color: $tb-row-color-light;
   }
   tr.darker {
-    background-color: lighten($cyan-color, 40%);
+    background-color: $tb-row-color-dark;
 
   }
   td {
@@ -655,10 +639,12 @@ table.project-table {
 
 .publications {
   margin-top: 2rem;
+
   .card {
     border: 0;
     font-weight: lighter;
   }
+
   .card-header {
     border-top: 1px solid var(--global-divider-color);
     border-bottom: 0;
@@ -666,6 +652,7 @@ table.project-table {
     margin-top: 2rem;
     margin-bottom: -1rem;
     background-color: var(--global-card-bg-color);
+
     a {
       text-align: right;
       color: var(--global-theme-color);
@@ -673,64 +660,104 @@ table.project-table {
         color: var(--global-hover-color);
       }
     }
+
     .fa-chevron:after {
       content: "\f078";
     }
+
     .collapsed .fa-chevron:after {
         content: "\f054";
     }
   }
+
   .card-body{
     h2 {
       font-weight: lighter;
     }
   }
+
   .btn-expand {
-    background-color: $light-cyan-color;
-    color: $grey-color-dark;
+    background-color: var(--global-btn-bg-color);
+    color: var(--global-btn-color);
     border-radius: 10px;
     &:hover {
       color: var(--global-hover-color);
     }
-  }
-  .panel-heading .fa-chevron:after {
-    content: "\f078";
-  }
-  .panel-heading.collapsed .fa-chevron:after {
-      content: "\f054";
   }
 
   ol.bibliography {
     list-style: none;
     padding: 0;
     margin-top: 0;
+
     li {
       margin: 1rem 2rem;
+
       .award {
         color: var(--global-theme-color) !important;
         border: 1px solid var(--global-theme-color);
       }
+
       .title {
         font-weight: normal;
       }
 
       .author {
+        a {
+          border-bottom-style: solid;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom-style: solid;
+            text-decoration: none;
+          }
+        }
+
         > em {
           font-style: normal;
           font-weight: bolder;
         }
+
+        > span.more-authors {
+          color: var(--global-text-color-light);
+          border-bottom: 1px dashed var(--global-text-color-light);
+          cursor: pointer;
+
+          &:hover {
+            color: var(--global-text-color);
+            border-bottom: 1px dashed var(--global-text-color);
+          }
+        }
       }
+
       .links {
         a.btn {
-          background-color: $light-cyan-color;
-          color: $grey-color-dark;
+          background-color: var(--global-btn-bg-color);
+          color: var(--global-btn-color);
           border-radius: 8px;
           padding: 8px;
+
           &:hover {
             color: var(--global-hover-color);
           }
         }
       }
+
+      .badges {
+        padding-bottom: 0.5rem;
+        span {
+          display: inline-block;
+          color: $black-color;
+          height: 100%;
+          padding-right: 0.5rem;
+          vertical-align: middle;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
       .hidden {
         font-size: 0.875rem;
         max-height: 0px;
@@ -746,12 +773,14 @@ table.project-table {
           line-height: 1.4em;
           margin: 10px;
         }
+
         pre {
           font-size: 1em;
           line-height: 1.4em;
           padding: 10px;
         }
       }
+
       .hidden.open {
         max-height: 100em;
         -webkit-transition: 0.15s ease;
@@ -760,9 +789,11 @@ table.project-table {
         -o-transition: 0.15s ease;
         transition: all 0.15s ease;
       }
+
       div.abstract.hidden {
         border: dashed 1px white;
       }
+
       div.abstract.hidden.open {
         border-color: var(--global-theme-color);
       }
@@ -775,14 +806,18 @@ table.project-table {
 
 .references {
   margin-top: 2rem;
+
   ol.bibliography {
     padding: 0;
     margin-top: 0;
+
     li {
       margin: 1rem 1rem;
+
       .title {
         font-weight: bolder;
       }
+
       .author {
         > em {
           font-style: normal;
@@ -1058,20 +1093,6 @@ progress::-moz-progress-bar {
       color: var(--global-hover-text-color);
     }
   }
-  .post-header {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--global-theme-color);
-    p {
-      margin-bottom: 0px;
-    }
-    a {
-      color: var(--global-theme-color);
-      &:hover {
-        color: var(--global-hover-color);
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 /* Table of Contents */
@@ -1157,4 +1178,20 @@ nav[data-toggle="toc"] {
 
 #toc-sidebar {
   z-index: 1;
+}
+
+.echarts {
+  height: 400px;
+  width: 100%;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+}
+
+swiper-container {
+  --swiper-navigation-color: var(--global-theme-color);
+  --swiper-pagination-color: var(--global-theme-color);
+  --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }

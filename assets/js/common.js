@@ -18,18 +18,32 @@ $(document).ready(function() {
     $("body").scrollspy({
       target: navSelector,
     });
-    $('a.bibtex').click(function() {
-        $(this).parent().parent().find(".bibtex.hidden").toggleClass('open');
-    });
-    $('.navbar-nav').find('a').removeClass('waves-effect waves-light');
-    $(".btn-expand").click(function(){
-      if (!$(this).data("openAll")) {
-          $(".collapse").collapse("show");
-      }
-      else {
-          $(".collapse").collapse("hide");
-      }
-      // save last state
-      $(this).data("openAll",!$(this).data("openAll"));
-    });
+  }
+
+  // add css to jupyter notebooks
+  const cssLink = document.createElement("link");
+  cssLink.href  = "../css/jupyter.css";
+  cssLink.rel   = "stylesheet";
+  cssLink.type  = "text/css";
+
+  let theme = localStorage.getItem("theme");
+  if (theme == null || theme == "null") {
+    const userPref = window.matchMedia;
+    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+  }
+
+  $('.jupyter-notebook-iframe-container iframe').each(function() {
+    $(this).contents().find("head").append(cssLink);
+
+    if (theme == "dark") {
+      $(this).bind("load",function(){
+        $(this).contents().find("body").attr({
+          "data-jp-theme-light": "false",
+          "data-jp-theme-name": "JupyterLab Dark"});
+      });
+    }
+  });
 });
+

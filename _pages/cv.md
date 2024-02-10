@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 description: A little bit more about myself
 nav: true
-nav_order: 3
+nav_order: 4
 social: true
 ---
 
