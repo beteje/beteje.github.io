@@ -21,7 +21,7 @@ Current projects include longitudinal studies related to stroke patients and coc
 
 <div class="row align-items-center">
   <div class="col-sm-4 mt-3 mt-md-0">
-    Our review of current literature {% cite Wu2022 %} shows there is clear evidence that the functional network in the brain changes following a stroke and continuously adapts as part of the recovery process. Despite this there has been little work done related to dynamic functional connectivity in stroke patients.<br/><br/>
+    Our review of current literature {% cite Wu2024a %} shows there is clear evidence that the functional network in the brain changes following a stroke and continuously adapts as part of the recovery process. Despite this there has been little work done related to dynamic functional connectivity in stroke patients.<br/><br/>
 
     Our current work is investigating the longitudinal trends in dynamic functional connectivity of stroke patients. The first step in this has been to understand how dynamic functional connectivity changes in the normal course of aging {% cite Wu2023 %}.
   </div>
