@@ -101,6 +101,9 @@
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">arXiv</a>
       {% endif %}
+      {% if entry.medrxiv %}
+        <a href="http://doi.org/{{ entry.medrxiv }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">medrxiv</a>
+      {% endif %}
       {% if entry.url %}
         <a href="{{ entry.url }}" class="btn btn-sm z-depth-0 mr-0" role="button" target="_blank" rel="noopener">html</a>
       {% endif %}
